@@ -1,10 +1,281 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Page</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kangaroo Play and Learn Centre</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="events.js" defer></script>
+  <style>
+    .button {
+      background: var(--primary-orange, #ff7300);
+      color: var(--white, #fff);
+      border: none;
+      border-radius: 24px;
+      padding: 0.5em 1.2em;
+      font-weight: 600;
+      font-size: 1em;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.2s, box-shadow 0.2s, transform 0.15s;
+      box-shadow: 0 2px 8px rgba(255, 115, 0, 0.10);
+      margin: 0.2em 0.2em;
+      display: inline-block;
+    }
+    .button:hover {
+      background: var(--accent-yellow, #ffb366);
+      color: var(--primary-orange, #ff7300);
+      transform: scale(1.05);
+      box-shadow: 0 4px 16px rgba(255, 115, 0, 0.18);
+    }
+    .gallery-img {
+      width: 180px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin: 0.5em;
+      box-shadow: 0 2px 8px rgba(30,144,255,0.10);
+      border: 2px solid var(--surface, #fff);
+    }
+    .highlight-pink {
+      background: #ffe4ef;
+      color: #d72660;
+      border-radius: 8px;
+      padding: 1em;
+      font-weight: 600;
+      margin: 1em 0;
+      text-align: center;
+    }
+    .text-orange {
+      color: var(--primary-orange, #ff7300);
+    }
+  </style>
 </head>
 <body>
+  <header class="card" style="text-align:center; margin-top:2em; background: linear-gradient(90deg, #ffb366 0%, #ff7300 100%); box-shadow:0 4px 24px rgba(255,115,0,0.10);">
+      <img src="./images/kplclogo.png" alt="Kangaroo Play and Learn Centre Logo" style="margin-top:1em; max-width:300px; justify-content: flex-end;">
+      <h1 style="font-size:2.7em; letter-spacing:1px; color:var(--white); margin-bottom:0.2em;">Kangaroo Play and Learn Centre</h1>
+      <p class="highlight" style="margin-top:1em; font-size:1.25em; background:var(--white); color:var(--primary-orange); display:inline-block;">A joyful start to a lifetime of learning</p>
+      <nav style="margin-top:1.5em;">
+      <a href="about.html" class="button">About</a>
+      <a href="programmes.html" class="button">Programmes</a>
+      <a href="enrolment.html" class="button">Enrolment</a>
+      <a href="albums.html" class="button">Gallery</a>
+      <a href="contact.html" class="button">Contact</a>
+    </nav>
+  </header>
+
+  <main style="max-width:800px; margin:2em auto;">
+    <section class="card" id="about" style="margin-bottom:2em;">
+      <h2>Welcome to Kangaroo Play and Learn Centre</h2>
+      <p>
+        <strong>Kangaroo Play and Learn Centre</strong> is a vibrant, nurturing pre-school where children aged 2–6 begin their educational journey. Our passionate educators create a safe, playful, and stimulating environment that encourages curiosity, creativity, and confidence.
+      </p>
+      <ul>
+        <li>Bright, secure classrooms and outdoor play areas</li>
+        <li>Small class sizes for individual attention</li>
+        <li>Warm, inclusive community for families</li>
+        <li>Qualified, caring staff with early childhood expertise</li>
+        <li>Engaging curriculum focused on holistic development</li>
+        <li>Regular communication and partnership with parents</li>
+      </ul>
+      <div style="margin-top:1.5em; text-align:center;">
+        <img src="./images/backyard.jpeg" alt="Classroom" class="gallery-img">
+        <img src="./images/backyard.jpeg" alt="Playground" class="gallery-img">
+      </div>
+      <div style="margin-top:2em;">
+        <h3 class="text-orange" style="margin-bottom:0.5em;">Our Mission</h3>
+        <p>
+          To provide a joyful, safe, and inspiring environment where every child is valued and encouraged to thrive. We believe in fostering a love of learning through play, exploration, and positive relationships.
+        </p>
+        <h3 class="text-orange" style="margin-bottom:0.5em;">Why Choose Us?</h3>
+        <ul>
+          <li>Experienced and passionate educators dedicated to early childhood development</li>
+          <li>Inclusive approach, celebrating diversity and supporting all abilities</li>
+          <li>Modern facilities with a strong focus on safety and well-being</li>
+          <li>Strong partnership with families and regular updates on your child’s progress</li>
+          <li>Wide range of activities: arts, music, STEM, outdoor adventures, and more</li>
+        </ul>
+        <div class="highlight-pink" style="margin-top:1.2em;">
+          Book a tour today and see why so many families trust us for their child’s first learning experience!
+        </div>
+      </div>
+    </section>
+
+    <section class="card" id="programs" style="margin-bottom:2em;">
+      <h2>Our Programmes</h2>
+      <p>
+        Our age-specific programmes are designed to support each child's unique learning journey. We focus on social, emotional, physical, and cognitive growth through a balance of structured activities and free play.
+      </p>
+      <div style="display:flex; flex-wrap:wrap; gap:1.5em;">
+        <div style="flex:1 1 220px;">
+          <h3 class="text-orange" style="margin-bottom:0.3em;">Joeys (Ages 2–3)</h3>
+          <ul>
+            <li>Gentle separation, sensory play</li>
+            <li>Music, movement, story time</li>
+            <li>Outdoor play, early social skills</li>
+            <li>Language development through songs and rhymes</li>
+            <li>Safe, nurturing routines for comfort and security</li>
+          </ul>
+        </div>
+        <div style="flex:1 1 220px;">
+          <h3 class="text-orange" style="margin-bottom:0.3em;">Explorers (Ages 3–4)</h3>
+          <ul>
+            <li>Play-based learning, creative arts</li>
+            <li>STEM activities, outdoor adventures</li>
+            <li>Early literacy games</li>
+            <li>Group activities to build cooperation</li>
+            <li>Introduction to numbers, shapes, and colors</li>
+          </ul>
+        </div>
+        <div style="flex:1 1 220px;">
+          <h3 class="text-orange" style="margin-bottom:0.3em;">Adventurers (Ages 4–5)</h3>
+          <ul>
+            <li>Project-based learning, early literacy</li>
+            <li>Music, drama, social development</li>
+            <li>STEM discovery</li>
+            <li>Problem-solving and critical thinking</li>
+            <li>Building independence and responsibility</li>
+          </ul>
+        </div>
+        <div style="flex:1 1 220px;">
+          <h3 class="text-orange" style="margin-bottom:0.3em;">Prep Kangas (Ages 5–6)</h3>
+          <ul>
+            <li>School readiness, advanced literacy</li>
+            <li>STEM, leadership, independence</li>
+            <li>Collaborative projects</li>
+            <li>Preparation for primary school routines</li>
+            <li>Confidence building and public speaking</li>
+          </ul>
+        </div>
+      </div>
+      <div style="margin-top:1em; text-align:center;">
+        <a href="programmes.html" class="button">See Full Programmes &rarr;</a>
+      </div>
+    </section>
+
+    <section class="card" id="enrolment" style="margin-bottom:2em;">
+      <h2>Enrolment</h2>
+      <p>
+        We welcome new families throughout the year! Book a tour, meet our teachers, and see our centre in action.
+      </p>
+      <a href="enrolment.html" class="button" style="margin-top:0.5em;">Book a Visit</a>
+      <ul style="margin-top:1em;">
+        <li>Flexible enrolment options</li>
+        <li>Affordable fees</li>
+        <li>Support for children with additional needs</li>
+      </ul>
+    </section>
+
+    <section class="card" id="gallery" style="margin-bottom:2em; text-align:center;">
+      <h2>Gallery</h2>
+      <p>See our happy learners in action!</p>
+      <div style="display:flex; flex-wrap:wrap; gap:1em; justify-content:center;">
+        <img src="./images/backyard.jpeg" alt="Children playing" class="gallery-img">
+        <img src="./images/backyard.jpeg" alt="Art activity" class="gallery-img">
+        <img src="./images/backyard.jpeg" alt="Outdoor fun" class="gallery-img">
+      </div>
+      <a href="albums.html" class="button" style="margin-top:1em;">View More Photos</a>
+    </section>
+
+    <section class="card" id="faq" style="margin-bottom:2em;">
+      <h2>Frequently Asked Questions</h2>
+      <details style="margin-bottom:1em;">
+        <summary style="font-weight:600; color:var(--primary-orange); cursor:pointer;">What are your opening hours?</summary>
+        <div style="margin-top:0.5em;">We are open Monday to Friday, 6:00am – 6:00pm, except public holidays.</div>
+      </details>
+      <details style="margin-bottom:1em;">
+        <summary style="font-weight:600; color:var(--primary-orange); cursor:pointer;">Do you offer meals?</summary>
+        <div style="margin-top:0.5em;">Yes, we provide nutritious breakfast, lunch, and snacks daily, included in the fees.</div>
+      </details>
+      <details style="margin-bottom:1em;">
+        <summary style="font-weight:600; color:var(--primary-orange); cursor:pointer;">How do I enrol my child?</summary>
+        <div style="margin-top:0.5em;">Visit our <a href="enrolment.html" style="color:var(--primary-orange); text-decoration:underline;">Enrolment page</a> to book a tour and start the process.</div>
+      </details>
+      <details>
+        <summary style="font-weight:600; color:var(--primary-orange); cursor:pointer;">Is there support for children with additional needs?</summary>
+        <div style="margin-top:0.5em;">Absolutely! Our team is experienced in supporting children with diverse needs and works closely with families to ensure every child thrives.</div>
+      </details>
+    </section>
+
+    <section class="card" id="events-container" style="margin-bottom:2em;">
+      <h2 style="text-align:center; margin-bottom:1em;">Upcoming Events</h2>
+      <h3 style="text-align:center; margin-bottom:1.5em;">Stay updated with our latest events and activities!</h3>
+      <div style="text-align:center; margin-bottom:2em;">
+        <iframe
+          src="https://calendar.google.com/calendar/embed?src=9924013282cc24a7b4b8c4a69f696b1aa8ad843e06201c747eee14c004aca8a9%40group.calendar.google.com&ctz=Africa%2FJohannesburg"
+          style="border:0; width:100%; max-width:800px; height:600px;"
+          frameborder="0"
+          scrolling="no">
+        </iframe>
+      </div>
+      <h3 style="text-align:center; margin-bottom:1em;">Upcoming Events List</h3>
+      <div id="events-list">Events loading...</div>
+      <style>
+        #events-container {
+          max-width: 600px;
+          margin: auto;
+          font-family: Arial, sans-serif;
+        }
+        .event {
+          padding: 15px;
+          border-bottom: 1px solid #ccc;
+        }
+        .event h3 {
+          margin: 0 0 5px 0;
+          color: #0077cc;
+        }
+      </style>
+    </section>
+
+    <section class="card" id="contact" style="text-align:center;">
+      <h2>Contact Us</h2>
+      <p>Have questions or want to enrol? We’d love to hear from you!</p>
+      <a href="mailto:kangaroolearningcentre2@gmail.com" class="button" style="margin-top:1em;">Email Us</a>
+      <p style="margin-top:1em; color:var(--gray-dark); font-size:0.95em;">
+        98 Gie Road Parklands<br>
+        (021) 556-8002
+      </p>
+    </section>
+  </main>
+
+  <footer style="background: linear-gradient(90deg, #ffb366 0%, #ff7300 100%); color:var(--white); font-size:0.98em; margin:2em 0 0 0; padding:2em 0 1em 0;">
+    <div style="display:flex; flex-wrap:wrap; justify-content:center; align-items:flex-start; gap:2.5em; max-width:900px; margin:0 auto 1.2em auto;">
+      <!-- Contact Info -->
+      <div style="min-width:220px; text-align:left;">
+        <div style="font-weight:700; margin-bottom:0.5em;">Contact</div>
+        <div style="margin-bottom:0.4em;">
+          <span style="font-weight:600;">Address:</span><br>
+          98 Gie Road Parklands
+        </div>
+        <div style="margin-bottom:0.4em;">
+          <span style="font-weight:600;">Phone:</span><br>
+          <a href="tel:0215568002" style="color:var(--white); text-decoration:underline;">(021) 556-8002</a>
+        </div>
+        <div>
+          <span style="font-weight:600;">Email:</span><br>
+          <a href="mailto:kangaroolearningcentre2@gmail.com" style="color:var(--white); text-decoration:underline;">kangaroolearningcentre2@gmail.com</a>
+        </div>
+      </div>
+      <!-- Social Media -->
+      <div style="min-width:220px; text-align:left;">
+        <div style="font-weight:700; margin-bottom:0.5em;">Connect with us</div>
+        <div style="display:flex; gap:1em; align-items:center; margin-bottom:0.7em;">
+          <a href="https://www.instagram.com/" target="_blank" rel="noopener" title="Instagram" style="display:inline-block;">
+            <img src="./images/instalogo.jpg" alt="Instagram" style="height:2.2em; width:2.2em; border-radius:50%; object-fit:cover; box-shadow:0 2px 8px rgba(0,0,0,0.13); background:#fff; transition:transform 0.2s;">
+          </a>
+          <a href="https://www.facebook.com/" target="_blank" rel="noopener" title="Facebook" style="display:inline-block;">
+            <img src="./images/facebooklogo.png" alt="Facebook" style="height:2.2em; width:2.2em; border-radius:50%; object-fit:cover; box-shadow:0 2px 8px rgba(0,0,0,0.13); background:#fff; transition:transform 0.2s;">
+          </a>
+          <a href="https://www.tiktok.com/" target="_blank" rel="noopener" title="TikTok" style="display:inline-block;">
+            <img src="./images/tiktoklogo.jpg" alt="TikTok" style="height:2.2em; width:2.2em; border-radius:50%; object-fit:cover; box-shadow:0 2px 8px rgba(0,0,0,0.13); background:#fff; transition:transform 0.2s;">
+          </a>
+        </div>
+      </div>
+    </div>
+    <div style="border-top:1px solid rgba(255,255,255,0.18); margin:1.2em auto 0 auto; max-width:900px; padding-top:1em; text-align:center;">
+      &copy; 2025 Kangaroo Play and Learn Centre. All rights reserved.
+    </div>
+  </footer>
 </body>
 </html>
