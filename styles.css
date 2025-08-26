@@ -1,17 +1,17 @@
 /* Base colors */
 :root {
-  --primary-orange: #ff914d;
-  --orange-dark: #f07c34;
-  --orange-light: #e99745;
+  --primary-orange: #ee8645bb;
+  --orange-dark: #f09b66e1;
+  --orange-light: #F09B66;
   --white: #ffffff;
   --gray-light: #fff6f9;
   --gray-dark: #222831;
-  --gray-medium: #6d6d6d;
+  --gray-medium: #fac2c2;
   --accent-yellow: #ffd600;
-  --border-light: #ffe3ec;
+  --border-light: #ffb9cf5b;
   --accent-green: #abf760;
   --accent-blue: #6ed3f0;
-  --light-pink: #e41254;
+  --light-pink: #e4125428;
 }
 
 /* Body and backgrounds */
