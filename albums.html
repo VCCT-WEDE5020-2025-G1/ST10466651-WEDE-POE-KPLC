@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Albums | Kangaroo Play and Learn Centre</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="albums.js" defer></script>
+  <style>
+    :root {
+      --primary-orange: #ff7300;
+      --accent-yellow: #ffb366;
+      --white: #fff;
+      --gray-medium: #7b8fa1;
+      --border-light: #f4f8fb;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", sans-serif;
+      background: #fffefc;
+      color: #333;
+    }
+
+    .button {
+      background: var(--primary-orange);
+      color: var(--white);
+      border: none;
+      border-radius: 24px;
+      padding: 0.5em 1.2em;
+      font-weight: 600;
+      font-size: 1em;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.2s, box-shadow 0.2s, transform 0.15s;
+      box-shadow: 0 2px 8px rgba(255, 115, 0, 0.1);
+      margin: 0.2em;
+      display: inline-block;
+    }
+
+    .button:hover {
+      background: var(--accent-yellow);
+      color: var(--primary-orange);
+      transform: scale(1.05);
+      box-shadow: 0 4px 16px rgba(255, 115, 0, 0.18);
+    }
+
+    header {
+      text-align: center;
+      padding: 2em 1em;
+      background: linear-gradient(90deg, #ffb366 0%, #ff7300 100%);
+      box-shadow: 0 4px 24px rgba(255, 115, 0, 0.1);
+    }
+
+    header h1 {
+      font-size: 2.3em;
+      color: var(--white);
+      margin-bottom: 0.2em;
+    }
+
+    nav {
+      margin-top: 1.5em;
+    }
+
+    .album-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2em;
+      justify-content: center;
+      margin-top: 2em;
+    }
+
+    .album-card {
+      background: var(--white);
+      border-radius: 16px;
+      box-shadow: 0 2px 16px rgba(51, 51, 51, 0.07);
+      border: 1px solid var(--border-light);
+      width: 260px;
+      transition: 0.2s ease;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .album-card:hover {
+      box-shadow: 0 6px 28px rgba(255, 115, 0, 0.13);
+      transform: translateY(-4px) scale(1.03);
+    }
+
+    .album-cover {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      border-bottom: 2px solid var(--accent-yellow);
+    }
+
+    .album-title {
+      font-size: 1.15em;
+      font-weight: 700;
+      color: var(--primary-orange);
+      margin: 1em 0 0.5em;
+    }
+
+    .album-desc {
+      color: var(--gray-medium);
+      font-size: 0.95em;
+      margin: 0 1em 1em;
+    }
+
+    #album-view {
+      text-align: center;
+    }
+
+    #photo-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1em;
+      justify-content: center;
+      margin-top: 1.5em;
+    }
+
+    #photo-grid img {
+      width: 220px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    @media (max-width: 700px) {
+      .album-card {
+        width: 90%;
+      }
+
+      #photo-grid img {
+        width: 90%;
+        height: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Photo Albums</h1>
+    <nav>
+      <a href="home.html" class="button">Home</a>
+      <a href="about.html" class="button">About</a>
+      <a href="programmes.html" class="button">Programs</a>
+      <a href="enrolment.html" class="button">Enrolment</a>
+      <a href="contact.html" class="button">Contact</a>
+    </nav>
+  </header>
+
+  <main style="max-width: 1000px; margin: 2em auto; padding: 0 1em;">
+    <section style="text-align: center;">
+      <div>
+       <h2>Memorable Moments at Kangaroo</h2>
+      <p>
+        Explore our albums to see the fun, learning, and friendships that happen every day at our centre.
+      </p> 
+      </div>
+
+    </section>
+  </main>
+
+    <section>
+      <div id="album-view" class="hidden">
+      <button class="button" onclick="closeAlbum()">🔙 Back</button>
+      <div id="photo-grid"></div>
+      </div>
+
+      <div id="album-list" class="album-grid"></div>
+      <div id="image-modal" class="hidden">
+      <span id="close-modal" onclick="closeModal()">×</span>
+      <img id="modal-img" src="" alt="Expanded view" />
+      </div>
+
+    </section>
+
+  <footer style="background: linear-gradient(90deg, #ffb366 0%, #ff7300 100%); color: var(--white); font-size: 0.98em; padding: 2em 0 1em;">
+    <div style="max-width: 900px; margin: 0 auto 1.2em; display: flex; flex-wrap: wrap; justify-content: center; gap: 2.5em;">
+      <div style="min-width: 220px;">
+        <div style="font-weight: 700; margin-bottom: 0.5em;">Contact</div>
+        <p>98 Gie Road Parklands</p>
+        <p>📞 <a href="tel:0215568002" style="color: white;">(021) 556-8002</a></p>
+        <p>📧 <a href="mailto:kangaroolearningcentre2@gmail.com" style="color: white;">Email Us</a></p>
+      </div>
+      <div style="min-width: 220px;">
+        <div style="font-weight: 700; margin-bottom: 0.5em;">Connect with us</div>
+        <div style="display: flex; gap: 1em;">
+          <a href="https://instagram.com/" target="_blank"><img src="./images/instalogo.jpg" alt="Instagram" style="width: 2.2em; height: 2.2em; border-radius: 50%; object-fit: cover; background: #fff;"></a>
+          <a href="https://facebook.com/" target="_blank"><img src="./images/facebooklogo.png" alt="Facebook" style="width: 2.2em; height: 2.2em; border-radius: 50%; object-fit: cover; background: #fff;"></a>
+          <a href="https://tiktok.com/" target="_blank"><img src="./images/tiktoklogo.jpg" alt="TikTok" style="width: 2.2em; height: 2.2em; border-radius: 50%; object-fit: cover; background: #fff;"></a>
+        </div>
+      </div>
+    </div>
+    <div style="text-align: center; border-top: 1px solid rgba(255,255,255,0.18); padding-top: 1em;">
+      &copy; 2025 Kangaroo Play and Learn Centre. All rights reserved.
+    </div>
+  </footer>
+
+  <script src="albums.js"></script>
+</body>
+</html>
