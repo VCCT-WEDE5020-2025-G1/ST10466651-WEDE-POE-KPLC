@@ -4,14 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Enrolment | Kangaroo Play and Learn Centre</title>
+
+  <!-- Main external stylesheet -->
   <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="home.html">
-    <link rel="stylesheet" href="about.html">
-    <link rel="stylesheet" href="programmes.html">
-    <link rel="stylesheet" href="albums.html">
-    <link rel="stylesheet" href="contact.html">
-    <script src="calendar.js" defer></script>
-      <style>
+  <!-- JS for calendar (loads after DOM) -->
+  <script src="calendar.js" defer></script>
+
+  <!-- Button styling (inline for now, could move to styles.css) -->
+  <style>
     .button {
       background: var(--primary-orange);
       color: var(--white);
@@ -34,6 +34,8 @@
       box-shadow: 0 4px 16px rgba(255, 115, 0, 0.18);
     }
   </style>
+
+  <!-- Layout styling for enrolment page -->
   <style>
     .enrolment-container {
       display: flex;
@@ -75,6 +77,8 @@
       margin-top: 1.2em;
       width: 100%;
     }
+
+    /* Calendar styles */
     .calendar {
       margin-top: 1.5em;
       background: var(--gray-light);
@@ -114,6 +118,8 @@
       color: var(--white);
       font-weight: 700;
     }
+
+    /* Mobile responsive layout */
     @media (max-width: 900px) {
       .enrolment-container {
         flex-direction: column;
@@ -123,19 +129,24 @@
   </style>
 </head>
 <body>
+  <!-- Header with nav menu -->
   <header class="card" style="text-align:center; margin-top:2em; background: linear-gradient(90deg, #ffb366 0%, #ff7300 100%); box-shadow:0 4px 24px rgba(255,115,0,0.10);">
     <h1 style="font-size:2.3em; letter-spacing:1px; color:var(--white); margin-bottom:0.2em;">Enrolment & Book a Visit</h1>
     <nav style="margin-top:1.5em;">
+      <!-- Navigation buttons -->
       <a href="home.html" class="button" style="margin:0 0.5em;">Home</a>
       <a href="about.html" class="button" style="margin:0 0.5em;">About</a>
-      <a href="programmes.html" class="button" style="margin:0 0.5em;">Programmes</a>
+      <a href="programme.html" class="button" style="margin:0 0.5em;">Programmes</a>
       <a href="albums.html" class="button" style="margin:0 0.5em;">Gallery</a>
-      <a href="contact.html" class="button" style="margin:0 0.5em;">Contact</a>
+      <a href="contacts.html" class="button" style="margin:0 0.5em;">Contact</a>
     </nav>
   </header>
 
+  <!-- Main content -->
   <main style="max-width:1000px; margin:2em auto;">
     <section class="enrolment-container">
+
+      <!-- Left info box -->
       <div class="enrolment-info">
         <h2>Start Your Journey With Us</h2>
         <p>
@@ -147,9 +158,12 @@
           <li>Support for children with additional needs</li>
           <li>Transparent, affordable fees</li>
         </ul>
+
+        <!-- Dynamic calendar -->
         <div class="calendar" id="calendar">
           <h3 style="margin-bottom:0.5em;">Visit Availability</h3>
           <div id="calendar-controls" style="margin-bottom:0.5em;">
+            <!-- Previous / next month navigation -->
             <button id="prev-month" class="button" style="padding:0.3em 1em; font-size:0.95em;">&#8592;</button>
             <span id="calendar-month" style="font-weight:700; margin:0 1em;"></span>
             <button id="next-month" class="button" style="padding:0.3em 1em; font-size:0.95em;">&#8594;</button>
@@ -161,25 +175,29 @@
               </tr>
             </thead>
             <tbody id="calendar-body">
-              <!-- Calendar days will be injected here -->
-              <!-- The calendar is dynamically rendered by JavaScript.
-                   No static HTML is needed here. -->
+              <!-- Calendar days will be injected by JavaScript -->
             </tbody>
           </table>
+          <!-- Legend -->
           <div style="margin-top:0.7em; font-size:0.97em;">
             <span style="background:var(--accent-green); color:var(--gray-dark); border-radius:5px; padding:0.2em 0.7em;">Available</span>
             <span style="background:var(--border-light); color:var(--gray-medium); border-radius:5px; padding:0.2em 0.7em; margin-left:1em;">Unavailable</span>
           </div>
         </div>
       </div>
+
+      <!-- Right booking form -->
       <form class="enrolment-form" id="enrolment-form" autocomplete="off">
         <h2>Book a Visit</h2>
+
+        <!-- Parent info -->
         <label for="parent-name">Parent's Name</label>
         <input type="text" id="parent-name" name="parent-name" required placeholder="Enter your name">
 
         <label for="child-name">Child's Name</label>
         <input type="text" id="child-name" name="child-name" required placeholder="Enter your child's name">
 
+        <!-- Dropdown for child’s age -->
         <label for="child-age">Child's Age</label>
         <select id="child-age" name="child-age" required>
           <option value="">Select age</option>
@@ -190,9 +208,11 @@
           <option value="6">6 years</option>
         </select>
 
+        <!-- Date (linked to calendar) -->
         <label for="visit-date">Preferred Visit Date</label>
         <input type="text" id="visit-date" name="visit-date" required placeholder="Select a date from the calendar" readonly style="background:var(--gray-light); cursor:pointer;">
 
+        <!-- Time slot -->
         <label for="visit-time">Preferred Time Slot</label>
         <select id="visit-time" name="visit-time" required>
           <option value="">Select a time slot</option>
@@ -208,19 +228,23 @@
           <option value="15:30-16:00">15:30 – 16:00</option>
         </select>
 
+        <!-- Contact details -->
         <label for="email">Your Email</label>
         <input type="email" id="email" name="email" required placeholder="Enter your email">
 
+        <!-- Optional message -->
         <label for="message">Additional Message (optional)</label>
         <textarea id="message" name="message" placeholder="Let us know anything else!"></textarea>
 
+        <!-- Submit -->
         <button type="submit" class="button">Book Visit</button>
         <div id="form-status" style="margin-top:1em; color:var(--primary-orange); font-weight:600;"></div>
       </form>
     </section>
   </main>
 
- <footer style="background: linear-gradient(90deg, #ffb366 0%, #ff7300 100%); color:var(--white); font-size:0.98em; margin:2em 0 0 0; padding:2em 0 1em 0;">
+  <!-- Footer with contact + socials -->
+  <footer style="background: linear-gradient(90deg, #ffb366 0%, #ff7300 100%); color:var(--white); font-size:0.98em; margin:2em 0 0 0; padding:2em 0 1em 0;">
       <div style="display:flex; flex-wrap:wrap; justify-content:center; align-items:flex-start; gap:2.5em; max-width:900px; margin:0 auto 1.2em auto;">
         <!-- Contact Info -->
         <div style="min-width:220px; text-align:left;">
@@ -238,24 +262,21 @@
             <a href="mailto:kangaroolearningcentre2@gmail.com" style="color:var(--white); text-decoration:underline;">kangaroolearningcentre2@gmail.com</a>
           </div>
         </div>
+
         <!-- Social Media -->
         <div style="min-width:220px; text-align:left;">
           <div style="font-weight:700; margin-bottom:0.5em;">Connect with us</div>
           <div style="display:flex; gap:1em; align-items:center; margin-bottom:0.7em;">
-            <a href="https://www.instagram.com/" target="_blank" rel="noopener" title="Instagram" style="display:inline-block;">
-              <img src="./images/instalogo.jpg" alt="Instagram" style="height:2.2em; width:2.2em; border-radius:50%; object-fit:cover; box-shadow:0 2px 8px rgba(0,0,0,0.13); background:#fff; transition:transform 0.2s;">
+            <!-- Icons -->
+            <a href="https://www.instagram.com/" target="_blank" rel="noopener" title="Instagram">
+              <img src="./images/instalogo.jpg" alt="Instagram" style="height:2.2em; width:2.2em; border-radius:50%; object-fit:cover;">
             </a>
-            <a href="https://www.facebook.com/" target="_blank" rel="noopener" title="Facebook" style="display:inline-block;">
-              <img src="./images/facebooklogo.png" alt="Facebook" style="height:2.2em; width:2.2em; border-radius:50%; object-fit:cover; box-shadow:0 2px 8px rgba(0,0,0,0.13); background:#fff; transition:transform 0.2s;">
+            <a href="https://www.facebook.com/" target="_blank" rel="noopener" title="Facebook">
+              <img src="./images/facebooklogo.png" alt="Facebook" style="height:2.2em; width:2.2em; border-radius:50%; object-fit:cover;">
             </a>
-            <a href="https://www.tiktok.com/" target="_blank" rel="noopener" title="TikTok" style="display:inline-block;">
-              <img src="./images/tiktoklogo.jpg" alt="TikTok" style="height:2.2em; width:2.2em; border-radius:50%; object-fit:cover; box-shadow:0 2px 8px rgba(0,0,0,0.13); background:#fff; transition:transform 0.2s;">
+            <a href="https://www.tiktok.com/" target="_blank" rel="noopener" title="TikTok">
+              <img src="./images/tiktoklogo.jpg" alt="TikTok" style="height:2.2em; width:2.2em; border-radius:50%; object-fit:cover;">
             </a>
-          </div>
-          <div>
-            <a href="https://www.instagram.com/" target="_blank" rel="noopener" style="color:var(--white); text-decoration:none; margin-right:1em;"></a>
-            <a href="https://www.facebook.com/" target="_blank" rel="noopener" style="color:var(--white); text-decoration:none; margin-right:1em;"></a>
-            <a href="https://www.tiktok.com/" target="_blank" rel="noopener" style="color:var(--white); text-decoration:none;"></a>
           </div>
         </div>
       </div>
@@ -263,8 +284,10 @@
         &copy; 2025 Kangaroo Play and Learn Centre. All rights reserved.
       </div>
   </footer>
+
+  <!-- JavaScript: Calendar + Form logic -->
   <script>
-    // Simple calendar logic for demo (shows next 2 months, weekdays available)
+    // Calendar setup
     const calendarBody = document.getElementById('calendar-body');
     const calendarMonth = document.getElementById('calendar-month');
     const visitDateInput = document.getElementById('visit-date');
@@ -272,36 +295,43 @@
     let currentMonth = new Date().getMonth();
     let currentYear = new Date().getFullYear();
 
+    // Render calendar with availability
     function renderCalendar(month, year) {
       calendarBody.innerHTML = '';
       const firstDay = new Date(year, month, 1).getDay();
       const daysInMonth = new Date(year, month + 1, 0).getDate();
       const today = new Date();
+
       calendarMonth.textContent = `${new Date(year, month).toLocaleString('default', { month: 'long' })} ${year}`;
+
       let date = 1;
       for (let i = 0; i < 6; i++) {
         let row = document.createElement('tr');
         for (let j = 0; j < 7; j++) {
           let cell = document.createElement('td');
           if (i === 0 && j < firstDay) {
+            // Empty cells before month starts
             cell.innerHTML = '';
           } else if (date > daysInMonth) {
+            // Stop if beyond month
             cell.innerHTML = '';
           } else {
             let cellDate = new Date(year, month, date);
-            // Only allow booking on weekdays, and not in the past
+
+            // Only weekdays & future dates are selectable
             if (cellDate >= today && cellDate.getDay() !== 0 && cellDate.getDay() !== 6) {
               cell.className = 'available';
               cell.textContent = date;
               cell.tabIndex = 0;
-              cell.style.cursor = 'pointer';
               cell.addEventListener('click', function() {
+                // Highlight selected day
                 document.querySelectorAll('.calendar td').forEach(td => td.classList.remove('selected'));
                 cell.classList.add('selected');
                 selectedDate = cellDate;
                 visitDateInput.value = cellDate.toLocaleDateString();
               });
             } else {
+              // Weekends + past days = unavailable
               cell.className = 'unavailable';
               cell.textContent = date;
             }
@@ -314,6 +344,7 @@
       }
     }
 
+    // Prev/Next month buttons
     document.getElementById('prev-month').addEventListener('click', function() {
       if (currentMonth > new Date().getMonth() || currentYear > new Date().getFullYear()) {
         currentMonth--;
@@ -324,7 +355,6 @@
         renderCalendar(currentMonth, currentYear);
       }
     });
-
     document.getElementById('next-month').addEventListener('click', function() {
       if (currentMonth < new Date().getMonth() + 1 || currentYear < new Date().getFullYear()) {
         currentMonth++;
@@ -335,6 +365,10 @@
         renderCalendar(currentMonth, currentYear);
       }
     });
+
+    // Scroll to calendar when date input is focused
+   
+
 
     visitDateInput.addEventListener('focus', function() {
       document.getElementById('calendar').scrollIntoView({ behavior: 'smooth', block: 'center' });

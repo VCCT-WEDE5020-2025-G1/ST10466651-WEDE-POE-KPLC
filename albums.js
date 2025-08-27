@@ -49,7 +49,24 @@ const albums = [
       "./images/Learning in Action/backyard.jpeg",
       "./images/Learning in Action/backyard.jpeg"
     ]
-  }
+  },
+    {
+    title: "Special Events",
+    desc: "A glance at our special moments and annual celebrations.",
+    cover: "./images/backyard.jpeg",
+    photos: [
+      "./images/Special Events/backyard.jpeg",
+      "./images/Special Events/backyard.jpeg",
+      "./images/Special Events/backyard.jpeg",
+      "./images/Special Events/backyard.jpeg",
+      "./images/Special Events/backyard.jpeg",
+      "./images/Special Events/backyard.jpeg",
+      "./images/Special Events/backyard.jpeg",
+      "./images/Special Events/backyard.jpeg",
+      "./images/Special Events/backyard.jpeg",
+      "./images/Special Events/backyard.jpeg"
+    ]
+  },
 ];
 
 const albumListEl = document.getElementById('album-list');

@@ -4,25 +4,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Albums | Kangaroo Play and Learn Centre</title>
+
+  <!-- External stylesheet -->
   <link rel="stylesheet" href="styles.css" />
+
+  <!-- Load albums.js only once with defer -->
   <script src="albums.js" defer></script>
+
   <style>
-    :root {
-      --primary-orange: #ff7300;
-      --accent-yellow: #ffb366;
-      --white: #fff;
-      --gray-medium: #7b8fa1;
-      --border-light: #f4f8fb;
-    }
-
-    body {
-      margin: 0;
-      font-family: "Segoe UI", sans-serif;
-      background: #fffefc;
-      color: #333;
-    }
-
-    .button {
+    /* Button Styles */
+   .button {
       background: var(--primary-orange);
       color: var(--white);
       border: none;
@@ -33,11 +24,10 @@
       cursor: pointer;
       text-decoration: none;
       transition: background 0.2s, box-shadow 0.2s, transform 0.15s;
-      box-shadow: 0 2px 8px rgba(255, 115, 0, 0.1);
-      margin: 0.2em;
+      box-shadow: 0 2px 8px rgba(255, 115, 0, 0.10);
+      margin: 0.2em 0.2em;
       display: inline-block;
     }
-
     .button:hover {
       background: var(--accent-yellow);
       color: var(--primary-orange);
@@ -45,6 +35,7 @@
       box-shadow: 0 4px 16px rgba(255, 115, 0, 0.18);
     }
 
+    /* Header */
     header {
       text-align: center;
       padding: 2em 1em;
@@ -62,6 +53,7 @@
       margin-top: 1.5em;
     }
 
+    /* Album Grid */
     .album-grid {
       display: flex;
       flex-wrap: wrap;
@@ -106,6 +98,7 @@
       margin: 0 1em 1em;
     }
 
+    /* Album View Section */
     #album-view {
       text-align: center;
     }
@@ -130,6 +123,7 @@
       display: none;
     }
 
+    /* Mobile Responsiveness */
     @media (max-width: 700px) {
       .album-card {
         width: 90%;
@@ -143,51 +137,72 @@
   </style>
 </head>
 <body>
-  <header>
-    <h1>Photo Albums</h1>
-    <nav>
+  <!-- Site Header -->
+  <header style="text-align:center; margin-top:2em; background: linear-gradient(90deg, #ffb366 0%, #ff7300 100%); box-shadow:0 4px 24px rgba(255,115,0,0.10);">
+  
+    <!-- Logo on the left -->
+    <div class="logo">
+      <img src="./images/kplclogo.png" alt="Kangaroo Play and Learn Centre Logo" />
+    </div>
+
+    <!-- Centered headings -->
+    <div class="header-titles">
+      <h1 style="font-size:2.3em; color:var(--white);">Photo Albums</h1>
+      <h2 style="color:var(--white); margin-bottom:0.2em;">Memorable Moments at Kangaroo</h2>
+    </div>
+
+    <!-- Buttons bottom-right -->
+    <div class="header-buttons" style="margin-top:1.5em;">
       <a href="home.html" class="button">Home</a>
       <a href="about.html" class="button">About</a>
-      <a href="programmes.html" class="button">Programs</a>
+      <a href="programme.html" class="button">Programmes</a>
       <a href="enrolment.html" class="button">Enrolment</a>
-      <a href="contact.html" class="button">Contact</a>
-    </nav>
+      <a href="contacts.html" class="button">Contact</a>
+    </div>
   </header>
 
+  <!-- Intro Section -->
   <main style="max-width: 1000px; margin: 2em auto; padding: 0 1em;">
     <section style="text-align: center;">
       <div>
-       <h2>Memorable Moments at Kangaroo</h2>
-      <p>
-        Explore our albums to see the fun, learning, and friendships that happen every day at our centre.
-      </p> 
+        <h2>Memorable Moments at Kangaroo</h2>
+        <p>
+          Explore our albums to see the fun, learning, and friendships that happen every day at our centre.
+        </p>
       </div>
-
     </section>
   </main>
 
-    <section>
-      <div id="album-view" class="hidden">
+  <!-- Album Sections -->
+  <section>
+    <!-- Album view (shown when user opens one) -->
+    <div id="album-view" class="hidden">
       <button class="button" onclick="closeAlbum()">🔙 Back</button>
       <div id="photo-grid"></div>
-      </div>
+    </div>
 
-      <div id="album-list" class="album-grid"></div>
-      <div id="image-modal" class="hidden">
+    <!-- Album list (default view) -->
+    <div id="album-list" class="album-grid"></div>
+
+    <!-- Image Modal -->
+    <div id="image-modal" class="hidden">
       <span id="close-modal" onclick="closeModal()">×</span>
       <img id="modal-img" src="" alt="Expanded view" />
-      </div>
+    </div>
+  </section>
 
-    </section>
-
+  <!-- Footer -->
   <footer style="background: linear-gradient(90deg, #ffb366 0%, #ff7300 100%); color: var(--white); font-size: 0.98em; padding: 2em 0 1em;">
     <div style="max-width: 900px; margin: 0 auto 1.2em; display: flex; flex-wrap: wrap; justify-content: center; gap: 2.5em;">
+      <!-- Contact Info -->
       <div style="min-width: 220px;">
         <div style="font-weight: 700; margin-bottom: 0.5em;">Contact</div>
         <p>98 Gie Road Parklands</p>
         <p>📞 <a href="tel:0215568002" style="color: white;">(021) 556-8002</a></p>
         <p>📧 <a href="mailto:kangaroolearningcentre2@gmail.com" style="color: white;">Email Us</a></p>
       </div>
+
+      <!-- Social Media -->
       <div style="min-width: 220px;">
         <div style="font-weight: 700; margin-bottom: 0.5em;">Connect with us</div>
         <div style="display: flex; gap: 1em;">
@@ -201,7 +216,5 @@
       &copy; 2025 Kangaroo Play and Learn Centre. All rights reserved.
     </div>
   </footer>
-
-  <script src="albums.js"></script>
 </body>
 </html>
