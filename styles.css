@@ -427,47 +427,82 @@ body {
 
 .header {
   background: linear-gradient(to right, #ffb367, #ff6a00);
-  padding: 20px;
+  padding: 30px 40px;
   border-radius: 15px;
   color: white;
-  text-align: center;
 }
 
-.header-content {
+.header-inner {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  gap: 30px;
   flex-wrap: wrap;
 }
 
 .logo img {
-  height: 150px;
+  height: 200px;
   width: auto;
 }
 
-.title {
+.header-content {
   flex: 1;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* keeps title centered */
+  position: relative;  /* allows absolute nav positioning inside */
+  padding-bottom: 60px;
+}
+
+.title {
   font-size: 2em;
   font-weight: bold;
-  margin: 0;
+  margin: 0 0 20px 0;
+  text-align: center;
+  width: 100%;
 }
 
+.nav {
+  position: absolute;
+  bottom: 0;              /* Stick to bottom of header-content */
+  right: 40px;            /* Adjust to move right */
+}
 .nav ul {
-  list-style-type: none;
-  padding: 0;
+.nav ul {
   display: flex;
   gap: 15px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
 }
 
+/* Style the nav buttons */
 .nav li {
   background-color: rgba(255, 255, 255, 0.2);
-  padding: 10px 20px;
   border-radius: 25px;
+  transition: transform 0.2s;
 }
 
 .nav a {
-  color: white;
+  display: inline-block;
+  padding: 10px 20px;
   text-decoration: none;
+  color: white;
   font-weight: bold;
+  border-radius: 25px;
 }
+
+/* On hover */
+.nav a:hover {
+  background-color: var(--accent-yellow);
+  color: var(--primary-orange);
+  border: 2px solid black;
+}
+
+/* Active (current page) styling */
+.nav a.active {
+  background-color: var(--accent-yellow);
+  color: var(--primary-orange);
+  border: 2px solid black;
+}
+
