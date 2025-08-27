@@ -1,6 +1,14 @@
-# ST10466651-WEDE-POE-KPLC
 
-The goal is to create a visually captivating, emotionally resonant, and highly functional website for a preschool that serves children aged 12 months to 6 years. The platform will act as the school’s digital front door, offering prospective and current parents everything they need to feel confident, informed, and connected.
-This site must do more than just look good - it must perform well under load, build emotional trust, and communicate the school's unique value through thoughtful structure, content, and interactivity.
+# KPLC
+## Student Details
+
+- Student Number: ST1046651
+- Student Name: Chukwuebuka Ezeh
+- Module: WEDE5020
+- Test Type: POE
+- Github Repository Link: https://github.com/VCCT-WEDE5020-2025-G1/ST10466651-WEDE-POE-KPLC.git 
 
 
+## Description
+
+The KPLC website is a super fun and easy to use space where parents and caregivers can check out everything about early childhood learning. It’s got a sleek dark theme with smooth effects that make browsing enjoyable. You can see the centre’s vibe in photo albums like Memorable Moments, packed with outdoor play, games, and special events. The layout is clean, with a header that keeps the logo, headings, and buttons just where they should be, making everything easy to find. Whether you’re checking out programs or scrolling through happy learning moments, the KPLC website really shows how the centre focuses on playful, all-around development for the kids.
