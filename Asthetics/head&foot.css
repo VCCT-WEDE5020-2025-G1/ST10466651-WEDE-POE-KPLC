@@ -1,0 +1,50 @@
+footer {
+  border-top: 1px solid var(--border-light);
+  padding-top: 1.5em;
+  margin-top: 2em;
+  color: var(--black);
+  font-size: 0.98em;
+  background: linear-gradient(90deg, var(--light-pink) 0%, var(--primary-orange) 100%);
+  text-align: center;
+}
+.header {
+  background: linear-gradient(to right, #ffb367, #ff6a00);
+  padding: 30px 40px;
+  border-radius: 15px;
+  color: rgb(10, 10, 10);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.logo img {
+  height: 150px;
+  width: auto;
+}
+
+.header-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* keeps title centered */
+  position: relative;  /* allows absolute nav positioning inside */
+  padding-bottom: 60px;
+}
+.nav {
+  position: absolute;
+  bottom: 0;              /* Stick to bottom of header-content */
+  right: 40px;            /* Adjust to move right */
+}
+.nav ul {
+.nav ul {
+  display: flex;
+  gap: 15px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+}
