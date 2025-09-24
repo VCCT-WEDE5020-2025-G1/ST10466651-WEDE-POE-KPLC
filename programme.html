@@ -57,18 +57,17 @@
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       const links = document.querySelectorAll('.programme-link');
-      const details = document.querySelectorAll('.programme-details');
-      
-      links.forEach((link, idx) => {
+      links.forEach(link => {
         link.addEventListener('click', function() {
-          // Show only the selected programme details
-          details.forEach((d, i) => d.classList.toggle('active', i === idx));
-          
-          // Smooth scroll to selected section
-          window.scrollTo({
-            top: link.getBoundingClientRect().top + window.scrollY - 80,
-            behavior: 'smooth'
-          });
+          const details = this.parentElement.querySelector('.programme-details');
+          details.classList.toggle('active');
+          // Optional: scroll to card if opening
+          if (details.classList.contains('active')) {
+            window.scrollTo({
+              top: link.getBoundingClientRect().top + window.scrollY - 80,
+              behavior: 'smooth'
+            });
+          }
         });
       });
     });
@@ -85,9 +84,9 @@
 
       <!-- Centered headings -->
       <div class="header-titles">
-        <h1 style="font-size:2.3em; color:var(--white);">Our Programmes</h1>
+        <h1 style="font-size:3.5em; color:var(--white);">Our Programmes</h1>
 
-        <nav style="margin-top:1.5em;">
+        <nav style="margin-top:1.5em; margin-left:5em auto;">
           <a href="home.html" class="button">Home</a>
           <a href="about.html" class="button">About</a>
           <a href="enrolment.html" class="button">Enrolment</a>
