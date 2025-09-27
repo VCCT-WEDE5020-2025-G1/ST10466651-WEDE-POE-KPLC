@@ -25,6 +25,16 @@ body {
   padding: 0;
   min-height: 100vh;
 }
+body {
+  background: var(--gray-light);
+  color: var(--gray-dark);
+  font-family: 'Segoe UI', Arial, sans-serif;
+  font-size: 1.08em;
+  line-height: 1.7;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
 
 /* Headers */
 h1, h2, h3, h4, h5, h6 {
@@ -77,6 +87,34 @@ h3 {
   color: var(--primary-orange);
   border: 2px solid black;
 }
+/* Buttons - unified padding and polish */
+.button, .btn, button, input[type="submit"] {
+  background: var(--orange-light);
+  color: var(--white);
+  border: none;
+  border-radius: 24px;
+  padding: 0.7em 1.5em;
+  font-weight: 600;
+  font-size: 1em;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.2s, box-shadow 0.2s, transform 0.15s;
+  box-shadow: 0 2px 8px rgba(255, 115, 0, 0.10);
+  margin: 0.2em 0.2em;
+  display: inline-block;
+}
+.button:hover, .btn:hover, button:hover, input[type="submit"]:hover {
+  background: var(--accent-yellow);
+  color: var(--primary-orange);
+  transform: scale(1.07);
+  box-shadow: 0 4px 16px rgba(255, 115, 0, 0.18);
+  border: 2px solid var(--primary-orange);
+}
+.button:active, .btn:active, button:active, input[type="submit"]:active {
+  background: var(--light-pink);
+  color: var(--primary-orange);
+  border: 2px solid var(--primary-orange);
+}
 
 /* Links */
 a {
@@ -104,6 +142,22 @@ a:hover, a:focus {
 .card:hover {
   box-shadow: 0 6px 28px rgba(255, 115, 0, 0.13);
   border-left: 8px solid var(--primary-orange);
+}
+/* Card polish */
+.card {
+  background: var(--white);
+  border-radius: 18px;
+  box-shadow: 0 2px 16px rgba(255, 115, 0, 0.07);
+  padding: 2.2em 2em 2em 2em;
+  margin: 1.5em 0;
+  border: 2px solid var(--border-light);
+  transition: box-shadow 0.2s, border-left 0.2s, transform 0.18s;
+  position: relative;
+}
+.card:hover {
+  box-shadow: 0 8px 32px rgba(255, 115, 0, 0.15);
+  border-left: 8px solid var(--primary-orange);
+  transform: translateY(-2px) scale(1.01);
 }
 
 /* Accent elements */
@@ -305,4 +359,3 @@ body {
   color: var(--primary-orange);
   border: 2px solid black;
 }
-

@@ -10,13 +10,13 @@
   box-sizing: border-box;
   position: relative;
 }
-footer {
+footer, .site-footer {
   border-top: 1px solid var(--border-light);
   padding-top: 1.5em;
   margin-top: 2em;
-  color: var(--black);
+  color: var(--white);
   font-size: 0.98em;
-  background: linear-gradient(90deg, var(--light-pink) 0%, var(--primary-orange) 100%);
+  background: linear-gradient(90deg, #ffb366 0%, #ff7300 100%);
   text-align: center;
   width: 100vw;
   box-sizing: border-box;
@@ -70,11 +70,47 @@ footer {
   right: 40px;            /* Adjust to move right */
 }
 .nav ul {
-.nav ul {
   display: flex;
   gap: 15px;
   list-style: none;
   padding: 0;
   margin: 0;
+  }
+
+/* Navigation button polish */
+  .nav a {
+    display: inline-block;
+    padding: 16px 32px;
+    font-size: 1.18em;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    border-radius: 28px;
+    background: var(--primary-orange);
+    box-shadow: 0 2px 8px rgba(255,115,0,0.10);
+    margin: 0 0.3em;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s, transform 0.15s;
+  }
+  .nav a:hover {
+    background-color: var(--accent-yellow);
+    color: var(--primary-orange);
+    border: 2px solid var(--primary-orange);
+    transform: scale(1.07);
+    box-shadow: 0 4px 16px rgba(255,115,0,0.18);
+  }
+  .nav a.active {
+    background-color: var(--accent-yellow);
+    color: var(--primary-orange);
+    border: 2px solid var(--primary-orange);
+    box-shadow: 0 4px 16px rgba(255,115,0,0.18);
+  }  
+
+.buttonposition {
+margin-top:1.5em; 
+margin-left:10em;
 }
+.titlepostion {
+  margin-left: 2em;
+  font-size:4em; 
+  color:var(--white);
 }
