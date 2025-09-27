@@ -16,23 +16,14 @@
 
 /* Body and backgrounds */
 body {
-  background: var(--gray-light);
-  color: var(--gray-dark);
   font-family: 'Segoe UI', Arial, sans-serif;
+  text-align: center;
+  background: #f4f4f9;
+  color: var(--gray-dark);
   font-size: 1.08em;
   line-height: 1.7;
   margin: 0;
-  padding: 0;
-  min-height: 100vh;
-}
-body {
-  background: var(--gray-light);
-  color: var(--gray-dark);
-  font-family: 'Segoe UI', Arial, sans-serif;
-  font-size: 1.08em;
-  line-height: 1.7;
-  margin: 0;
-  padding: 0;
+  padding: 20px;
   min-height: 100vh;
 }
 
@@ -48,7 +39,11 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
   font-size: 2.7em;
   margin-top: 0.2em;
+  margin-bottom: 20px;
   letter-spacing: 1px;
+.buttons {
+  margin-bottom: 20px;
+}
 }
 
 h2 {
@@ -60,32 +55,48 @@ h3 {
 }
 
 /* Buttons */
+/* Buttons - merged and polished */
 .button, .btn, button, input[type="submit"] {
-  background: var(--orange-light);
-  color: var(--white);
+  background: #007bff;
+  color: white;
   border: none;
-  border-radius: 24px;
-  padding: 0.5em 1.2em;
+  border-radius: 6px;
+  padding: 10px 20px;
   font-weight: 600;
-  font-size: 1em;
+  font-size: 16px;
   cursor: pointer;
   text-decoration: none;
-  transition: background 0.2s, box-shadow 0.2s, transform 0.15s;
-  box-shadow: 0 2px 8px rgba(255, 115, 0, 0.10);
-  margin: 0.2em 0.2em;
+  margin: 5px;
+  transition: background 0.3s, box-shadow 0.2s, transform 0.15s;
+  box-shadow: 0 2px 8px rgba(0, 123, 255, 0.10);
   display: inline-block;
-}  
+}
 .button:hover, .btn:hover, button:hover, input[type="submit"]:hover {
-  background: var(--accent-yellow);
-  color: var(--primary-orange);
-  transform: scale(1.05);
-  box-shadow: 0 4px 16px rgba(255, 115, 0, 0.18);
-  border: 2px solid black;
+  background: #0056b3;
+  color: white;
+  transform: scale(1.07);
+  box-shadow: 0 4px 16px rgba(0,123,255,0.18);
+  border: 2px solid #0056b3;
 }
 .button:active, .btn:active, button:active, input[type="submit"]:active {
-  background: var(--light-pink);
-  color: var(--primary-orange);
-  border: 2px solid black;
+  background: #0056b3;
+  color: white;
+  border: 2px solid #0056b3;
+}
+/* Table styles */
+table {
+  margin: 0 auto;
+  border-collapse: collapse;
+  width: 70%;
+}
+th, td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+}
+th {
+  background-color: #007bff;
+  color: white;
 }
 /* Buttons - unified padding and polish */
 .button, .btn, button, input[type="submit"] {
@@ -358,4 +369,18 @@ body {
   background-color: var(--accent-yellow);
   color: var(--primary-orange);
   border: 2px solid black;
+}
+table {
+  margin: 1.5em auto;
+  border-collapse: collapse;
+  width: 90%;
+}
+th, td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+}
+th {
+  background-color: var(--primary-orange);
+  color: white;
 }
