@@ -46,10 +46,17 @@ The first part of this POE building:
 ## Reference
 
 Anon. 2025a. WEDE POE KPLC Cite Map. Available at: <https://www.canva.com/design/DAGxKKKLGMA/ugIHPRetHIewHdRCjja4_w/edit>.
+
 Anon. 2025b. WEDE POE KPLC File Management. Available at: <https://www.canva.com/design/DAGxM5WaMBQ/QeTA7Gi_SRseiLitcPCvhA/edit>.
+
 W3Schools, 2025. W3Schools online web tutorials. Available at: <https://www.w3schools.com/>.
+
 Domain ACQ New Hero. (2025). Find Your Perfect Domain Name | Free Domain Search Tool | Wix.com. [online] Available at: https://www.wix.com/lp-en/domain?utm_source=bing&utm_medium=cpc&utm_campaign=506129503.
+
 GoDaddy. (2019). Make Your Own Way | GoDaddy. [online] Available at: https://www.godaddy.com.
+
 HOSTAFRICA. (2025). Best Hosting Provider South Africa | Quality Hosting Services. [online] Available at: https://hostafrica.co.za/.
+
 Schoolandcollegelistings.com. (2025). Kangaroo play and learning centre. [online] Available at: https://www.schoolandcollegelistings.com/ZA/Cape-Town/104197458585169/Kangaroo-play-and-learning-centre [Accessed 28 Sep. 2025].
+
 www.domains.co.za. (2025). Web Hosting South Africa. [online] Available at: https://www.domains.co.za/web-hosting-south-africa.
