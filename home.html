@@ -60,34 +60,35 @@
 
 <body>
   <!-- HEADER -->
-  <header class="card" style="text-align:center; margin-top:2em; background: linear-gradient(90deg, #ffb366 0%, #ff7300 100%); box-shadow:0 4px 24px rgba(255,115,0,0.10);">
-    <div class="header-inner">
-      <!-- Logo on the left -->
-      <div class="logo">
-        <img src="./images/kplclogo.png" alt="Kangaroo Play and Learn Centre Logo" />
-      </div>
+  <header class="site-header" role="banner" aria-label="Site header">
+  <div class="site-header-inner">
+    <!-- Logo on the left -->
+    <a href="home.html" class="logo">
+      <img src="./images/kplclogo.png" alt="Kangaroo Play and Learn Centre Logo">
+    </a>
 
-      <!-- Centered headings -->
-      <div class="header-titles">
-        <h1 style="font-size:3.5em; color:var(--white);" >Kangaroo Play and Learn Centre</h1>
-
-        
-          <!-- Navigation -->
-        <nav style="margin-top:1.5em;">
-          <a href="about.html" class="button">About</a>
-          <a href="programme.html" class="button">Programmes</a>
-          <a href="enrolment.html" class="button">Enrolment</a>
-          <a href="albums.html" class="button">Gallery</a>
-          <a href="contacts.html" class="button">Contact</a>
-        </nav>
-      </div>
+    <!-- Centered title + nav -->
+    <div class="header-center">
+      <h1 class="header-title">Kangaroo Play and Learn Centre</h1>
+      <nav class="nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="home.html" class="active">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="programme.html">Programmes</a></li>
+          <li><a href="albums.html">Gallery</a></li>
+          <li><a href="enrolment.html">Enrolment</a></li>
+          <li><a href="contacts.html">Contact</a></li>
+        </ul>
+      </nav>
     </div>
-  </header>
+  </div>
+</header>
 
-  <main style="max-width:800px; margin:2em auto;">
+
+  <main id="main" class="page-main">
 
     <!-- ABOUT SECTION -->
-    <section class="card" id="about" style="margin-bottom:2em;">
+  <section class="card section-spacer" id="about">
       <h2>Welcome to Kangaroo Play and Learn Centre</h2>
       <p>
         <strong>Kangaroo Play and Learn Centre</strong> is a vibrant, nurturing pre-school where children aged 2–6 begin their educational journey. Our passionate educators create a safe, playful, and stimulating environment that encourages curiosity, creativity, and confidence.
@@ -100,20 +101,20 @@
         <li>Engaging curriculum focused on holistic development</li>
         <li>Regular communication and partnership with parents</li>
       </ul>
-      <div style="margin-top:1.5em; text-align:center;">
-        <img src="./images/backyard.jpeg" alt="Classroom" class="gallery-img">
-        <img src="./images/backyard.jpeg" alt="Playground" class="gallery-img">
+      <div class="mt-1 center">
+        <img src="./images/backyard.jpeg" alt="Classroom" class="gallery-img" loading="lazy">
+        <img src="./images/backyard.jpeg" alt="Playground" class="gallery-img" loading="lazy">
       </div>
     </section>    
 
     <!-- MISSION SECTION -->
-    <section class="card" id="our-mission" style="margin-bottom:2em;">
+  <section class="card section-spacer" id="our-mission">
       <h2>Our Mission</h2>
       <p>
         To provide a joyful, safe, and inspiring environment where every child is valued and encouraged to thrive. We believe in fostering a love of learning through play, exploration, and positive relationships.
       </p>
-      <div style="margin-top:2em;">
-        <h3 class="text-orange" style="margin-bottom:0.5em;">Why Choose Us?</h3>
+      <div class="mt-1">
+        <h3 class="text-orange mb-1">Why Choose Us?</h3>
         <ul>
           <li>Experienced and passionate educators dedicated to early childhood development</li>
           <li>Inclusive approach, celebrating diversity and supporting all abilities</li>
@@ -122,20 +123,20 @@
           <li>Wide range of activities: arts, music, STEM, outdoor adventures, and more</li>
         </ul>
       </div>
-      <div class="highlight-pink" style="margin-top:1.2em;">
+      <div class="highlight-pink mt-1">
         Book a tour today and see why so many families trust us for their child’s first learning experience!
       </div>
     </section>
 
     <!-- PROGRAMMES SECTION -->
-    <section class="card" id="programmes" style="margin-bottom:2em;">
+  <section class="card section-spacer" id="programmes">
       <h2>Our Programmes</h2>
       <p>
         Our age-specific programmes are designed to support each child's unique learning journey. We focus on social, emotional, physical, and cognitive growth through a balance of structured activities and free play.
       </p>
       <!-- Four programmes: Joeys, Explorers, Adventurers, Prep Kangas -->
       <div style="display:flex; flex-wrap:wrap; gap:1.5em;">
-        <div style="flex:1 1 220px;">
+        <div class="flex-card">
           <h3 class="text-orange">Joeys (Ages 2–3)</h3>
           <ul>
             <li>Gentle separation, sensory play</li>
@@ -145,7 +146,7 @@
             <li>Safe, nurturing routines for comfort and security</li>
           </ul>
         </div>
-        <div style="flex:1 1 220px;">
+  <div class="flex-card">
           <h3 class="text-orange">Explorers (Ages 3–4)</h3>
           <ul>
             <li>Play-based learning, creative arts</li>
@@ -155,7 +156,7 @@
             <li>Introduction to numbers, shapes, and colors</li>
           </ul>
         </div>
-        <div style="flex:1 1 220px;">
+  <div class="flex-card">
           <h3 class="text-orange">Adventurers (Ages 4–5)</h3>
           <ul>
             <li>Project-based learning, early literacy</li>
@@ -165,7 +166,7 @@
             <li>Building independence and responsibility</li>
           </ul>
         </div>
-        <div style="flex:1 1 220px;">
+  <div class="flex-card">
           <h3 class="text-orange">Prep Kangas (Ages 5–6)</h3>
           <ul>
             <li>School readiness, advanced literacy</li>
@@ -176,17 +177,17 @@
           </ul>
         </div>
       </div>
-      <div style="margin-top:1em; text-align:center;">
+      <div class="mt-1 center">
         <a href="programme.html" class="button">See Full Programmes &rarr;</a>
       </div>
     </section>
 
     <!-- ENROLMENT SECTION -->
-    <section class="card" id="enrolment" style="margin-bottom:2em;">
+  <section class="card section-spacer" id="enrolment">
       <h2>Enrolment</h2>
       <p>We welcome new families throughout the year! Book a tour, meet our teachers, and see our centre in action.</p>
-      <a href="enrolment.html" class="button" style="margin-top:0.5em;">Book a Visit</a>
-      <ul style="margin-top:1em;">
+      <a href="enrolment.html" class="button mt-1">Book a Visit</a>
+      <ul class="mt-1">
         <li>Flexible enrolment options</li>
         <li>Affordable fees</li>
         <li>Support for children with additional needs</li>
@@ -194,46 +195,46 @@
     </section>
 
     <!-- GALLERY SECTION -->
-    <section class="card" id="gallery" style="margin-bottom:2em; text-align:center;">
+  <section class="card section-spacer center" id="gallery">
       <h2>Gallery</h2>
       <p>See our happy learners in action!</p>
       <div style="display:flex; flex-wrap:wrap; gap:1em; justify-content:center;">
-        <img src="./images/backyard.jpeg" alt="Children playing" class="gallery-img">
-        <img src="./images/backyard.jpeg" alt="Art activity" class="gallery-img">
-        <img src="./images/backyard.jpeg" alt="Outdoor fun" class="gallery-img">
+        <img src="./images/backyard.jpeg" alt="Children playing" class="gallery-img" loading="lazy">
+        <img src="./images/backyard.jpeg" alt="Art activity" class="gallery-img" loading="lazy">
+        <img src="./images/backyard.jpeg" alt="Outdoor fun" class="gallery-img" loading="lazy">
       </div>
-      <a href="albums.html" class="button" style="margin-top:1em;">View More Photos</a>
+      <a href="albums.html" class="button mt-1">View More Photos</a>
     </section>
 
     <!-- FAQ SECTION -->
-    <section class="card" id="faq" style="margin-bottom:2em;">
+  <section class="card section-spacer" id="faq">
       <h2>Frequently Asked Questions</h2>
       <!-- Each <details> creates a collapsible FAQ item -->
-      <details style="margin-bottom:1em;">
+      <details class="mb-1">
         <summary style="font-weight:600; color:var(--primary-orange); cursor:pointer;">What are your opening hours?</summary>
-        <div style="margin-top:0.5em;">We are open Monday to Friday, 6:00am – 6:00pm, except public holidays.</div>
+        <div class="mt-1">We are open Monday to Friday, 6:00am – 6:00pm, except public holidays.</div>
       </details>
-      <details style="margin-bottom:1em;">
+      <details class="mb-1">
         <summary style="font-weight:600; color:var(--primary-orange); cursor:pointer;">Do you offer meals?</summary>
-        <div style="margin-top:0.5em;">Yes, we provide nutritious breakfast, lunch, and snacks daily, included in the fees.</div>
+        <div class="mt-1">Yes, we provide nutritious breakfast, lunch, and snacks daily, included in the fees.</div>
       </details>
-      <details style="margin-bottom:1em;">
+      <details class="mb-1">
         <summary style="font-weight:600; color:var(--primary-orange); cursor:pointer;">How do I enrol my child?</summary>
-        <div style="margin-top:0.5em;">Visit our <a href="enrolment.html" style="color:var(--primary-orange); text-decoration:underline;">Enrolment page</a> to book a tour and start the process.</div>
+        <div class="mt-1">Visit our <a href="enrolment.html" style="color:var(--primary-orange); text-decoration:underline;">Enrolment page</a> to book a tour and start the process.</div>
       </details>
       <details>
         <summary style="font-weight:600; color:var(--primary-orange); cursor:pointer;">Is there support for children with additional needs?</summary>
-        <div style="margin-top:0.5em;">Absolutely! Our team is experienced in supporting children with diverse needs and works closely with families to ensure every child thrives.</div>
+        <div class="mt-1">Absolutely! Our team is experienced in supporting children with diverse needs and works closely with families to ensure every child thrives.</div>
       </details>
     </section>
 
     <!-- EVENTS SECTION -->
-    <section class="card" id="events-container" style="margin-bottom:2em;">
+  <section class="card section-spacer" id="events-container">
       <h2 style="text-align:center; margin-bottom:1em;">Upcoming Events</h2>
       <h3 style="text-align:center; margin-bottom:1.5em;">Stay updated with our latest events and activities!</h3>
 
       <!-- Embedded Google Calendar -->
-      <div style="text-align:center; margin-bottom:2em;">
+      <div class="center section-spacer">
         <iframe
           src="https://calendar.google.com/calendar/embed?src=9924013282cc24a7b4b8c4a69f696b1aa8ad843e06201c747eee14c004aca8a9%40group.calendar.google.com&ctz=Africa%2FJohannesburg"
           style="border:0; width:100%; max-width:800px; height:600px;"
@@ -265,11 +266,11 @@
     </section>
 
     <!-- CONTACT SECTION -->
-    <section class="card" id="contact" style="text-align:center;">
+    <section class="card center" id="contact">
       <h2>Contact Us</h2>
       <p>Have questions or want to enrol? We’d love to hear from you!</p>
-      <a href="mailto:kangaroolearningcentre2@gmail.com" class="button" style="margin-top:1em;">Email Us</a>
-      <p style="margin-top:1em; color:var(--gray-dark); font-size:0.95em;">
+      <a href="mailto:kangaroolearningcentre2@gmail.com" class="button mt-1">Email Us</a>
+      <p class="mt-1" style="color:var(--gray-dark); font-size:0.95em;">
         98 Gie Road Parklands<br>
         (021) 556-8002
       </p>
@@ -277,46 +278,8 @@
   </main>
 
   <!-- FOOTER -->
-  <footer style="background: linear-gradient(90deg, #ffb366 0%, #ff7300 100%); color:var(--white); font-size:0.98em; margin:2em 0 0 0; padding:2em 0 1em 0;">
-    <div style="display:flex; flex-wrap:wrap; justify-content:center; align-items:flex-start; gap:2.5em; max-width:900px; margin:0 auto 1.2em auto;">
+  <div id="footer"></div>
 
-      <!-- Contact Info -->
-      <div style="min-width:220px; text-align:left;">
-        <div style="font-weight:700; margin-bottom:0.5em;">Contact</div>
-        <div style="margin-bottom:0.4em;">
-          <span style="font-weight:600;">Address:</span><br>
-          98 Gie Road Parklands
-        </div>
-        <div style="margin-bottom:0.4em;">
-          <span style="font-weight:600;">Phone:</span><br>
-          <a href="tel:0215568002" style="color:var(--white); text-decoration:underline;">(021) 556-8002</a>
-        </div>
-        <div>
-          <span style="font-weight:600;">Email:</span><br>
-          <a href="mailto:kangaroolearningcentre2@gmail.com" style="color:var(--white); text-decoration:underline;">kangaroolearningcentre2@gmail.com</a>
-        </div>
-      </div>
-
-      <!-- Social Media -->
-      <div style="min-width:220px; text-align:left;">
-        <div style="font-weight:700; margin-bottom:0.5em;">Connect with us</div>
-        <div style="display:flex; gap:1em; align-items:center; margin-bottom:0.7em;">
-          <a href="https://www.instagram.com/" target="_blank" rel="noopener" title="Instagram">
-            <img src="./images/instalogo.jpg" alt="Instagram" style="height:2.2em; width:2.2em; border-radius:50%; object-fit:cover; box-shadow:0 2px 8px rgba(0,0,0,0.13); background:#fff; transition:transform 0.2s;">
-          </a>
-          <a href="https://www.facebook.com/" target="_blank" rel="noopener" title="Facebook">
-            <img src="./images/facebooklogo.png" alt="Facebook" style="height:2.2em; width:2.2em; border-radius:50%; object-fit:cover; box-shadow:0 2px 8px rgba(0,0,0,0.13); background:#fff; transition:transform 0.2s;">
-          </a>
-          <a href="https://www.tiktok.com/" target="_blank" rel="noopener" title="TikTok">
-            <img src="./images/tiktoklogo.jpg" alt="TikTok" style="height:2.2em; width:2.2em; border-radius:50%; object-fit:cover; box-shadow:0 2px 8px rgba(0,0,0,0.13); background:#fff; transition:transform 0.2s;">
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <div style="border-top:1px solid rgba(255,255,255,0.18); margin:1.2em auto 0 auto; max-width:900px; padding-top:1em; text-align:center;">
-      &copy; 2025 Kangaroo Play and Learn Centre. All rights reserved.
-    </div>
-  </footer>
+    <script src="include.js"></script>
 </body>
 </html>

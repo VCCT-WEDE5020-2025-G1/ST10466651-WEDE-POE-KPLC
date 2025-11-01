@@ -21,8 +21,13 @@ const activities = [
 
 // Function to shuffle activities randomly
 function getRandomActivities(num) {
-  let shuffled = activities.sort(() => 0.5 - Math.random());
-  return shuffled.slice(0, num);
+  // shuffle a copy so we don't mutate the original activities array
+  const copy = activities.slice();
+  for (let i = copy.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [copy[i], copy[j]] = [copy[j], copy[i]];
+  }
+  return copy.slice(0, num);
 }
 
 // Function to build timetable for one class
@@ -70,3 +75,6 @@ function showTimetable(classNum) {
   html += "</table>";
   document.getElementById("timetable").innerHTML = html;
 }
+
+// expose function for inline onclick handlers used in HTML
+window.showTimetable = showTimetable;

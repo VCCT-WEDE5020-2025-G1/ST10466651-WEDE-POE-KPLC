@@ -14,16 +14,22 @@
   --light-pink: #e4125428;
 }
 
+/* Import a clean modern UI font for a professional look */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap');
+
 /* Body and backgrounds */
 body {
-  font-family: 'Segoe UI', Arial, sans-serif;
-  text-align: center;
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  text-align: left;
   background: #f4f4f9;
   color: var(--gray-dark);
-  font-size: 1.08em;
-  line-height: 1.7;
+  font-size: 16px;
+  line-height: 1.65;
   margin: 0;
-  padding: 20px;
+  padding: 0;
   min-height: 100vh;
 }
 
@@ -37,13 +43,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: 2.7em;
-  margin-top: 0.2em;
-  margin-bottom: 20px;
+  font-size: 2.2em;
+  margin-top: 0.4em;
+  margin-bottom: 0.6em;
   letter-spacing: 1px;
+}
+
 .buttons {
   margin-bottom: 20px;
-}
 }
 
 h2 {
@@ -56,46 +63,48 @@ h3 {
 
 /* Buttons */
 /* Buttons - merged and polished */
+/* Unified site button styles (use class="button") */
 .button, .btn, button, input[type="submit"] {
-  background: #007bff;
-  color: white;
+  background: var(--primary-orange);
+  color: var(--white);
   border: none;
-  border-radius: 6px;
-  padding: 10px 20px;
+  border-radius: 24px;
+  padding: 0.6em 1.2em;
   font-weight: 600;
-  font-size: 16px;
+  font-size: 1rem;
   cursor: pointer;
   text-decoration: none;
-  margin: 5px;
-  transition: background 0.3s, box-shadow 0.2s, transform 0.15s;
-  box-shadow: 0 2px 8px rgba(0, 123, 255, 0.10);
+  transition: background 0.2s, box-shadow 0.2s, transform 0.12s;
+  box-shadow: 0 2px 8px rgba(255, 115, 0, 0.10);
+  margin: 0.25em;
   display: inline-block;
 }
 .button:hover, .btn:hover, button:hover, input[type="submit"]:hover {
-  background: #0056b3;
-  color: white;
-  transform: scale(1.07);
-  box-shadow: 0 4px 16px rgba(0,123,255,0.18);
-  border: 2px solid #0056b3;
+  background: var(--accent-yellow);
+  color: var(--primary-orange);
+  transform: scale(1.03);
+  box-shadow: 0 4px 16px rgba(255, 115, 0, 0.18);
+  border: 2px solid var(--primary-orange);
 }
 .button:active, .btn:active, button:active, input[type="submit"]:active {
-  background: #0056b3;
-  color: white;
-  border: 2px solid #0056b3;
+  background: var(--light-pink);
+  color: var(--primary-orange);
+  border: 2px solid var(--primary-orange);
 }
 /* Table styles */
 table {
-  margin: 0 auto;
+  margin: 1.2em auto;
   border-collapse: collapse;
-  width: 70%;
+  width: 100%;
+  max-width: 900px;
 }
 th, td {
-  border: 1px solid #ddd;
+  border: 1px solid #eee;
   padding: 10px;
-  text-align: center;
+  text-align: left;
 }
 th {
-  background-color: #007bff;
+  background-color: var(--primary-orange);
   color: white;
 }
 /* Buttons - unified padding and polish */
@@ -142,17 +151,17 @@ a:hover, a:focus {
 /* Cards or interactive panels */
 .card {
   background: var(--white);
-  border-radius: 18px;
-  box-shadow: 0 2px 16px rgba(255, 115, 0, 0.07);
-  padding: 2.2em 2em 2em 2em;
-  margin: 1.5em 0;
-  border: 2px solid var(--border-light);
-  transition: box-shadow 0.2s, border-left 0.2s;
+  border-radius: 14px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+  padding: 1.4em;
+  margin: 1.2em 0;
+  border: 1px solid var(--border-light);
+  transition: box-shadow 0.18s, transform 0.12s;
   position: relative;
 }
 .card:hover {
-  box-shadow: 0 6px 28px rgba(255, 115, 0, 0.13);
-  border-left: 8px solid var(--primary-orange);
+  box-shadow: 0 8px 28px rgba(255, 115, 0, 0.12);
+  transform: translateY(-3px);
 }
 /* Card polish */
 .card {
@@ -237,8 +246,8 @@ input:focus, textarea:focus, select:focus {
 
 /* Professional touch: spacing and layout */
 main {
-  padding: 0 1.5em;
-  max-width: 800px;
+  padding: 1em;
+  max-width: 1100px;
   margin: 0 auto;
 }
 ul {
@@ -350,11 +359,11 @@ body {
 
 .nav a {
   display: inline-block;
-  padding: 10px 20px;
+  padding: 10px 18px;
   text-decoration: none;
   color: white;
-  font-weight: bold;
-  border-radius: 25px;
+  font-weight: 700;
+  border-radius: 22px;
 }
 
 /* On hover */
@@ -370,17 +379,41 @@ body {
   color: var(--primary-orange);
   border: 2px solid black;
 }
-table {
-  margin: 1.5em auto;
-  border-collapse: collapse;
-  width: 90%;
+/* utility tweaks for small screens */
+@media (max-width: 600px) {
+  main { padding: 0.6em; }
+  h1 { font-size: 1.5em; }
+  .logo img { height: 82px; }
+  .nav a { padding: 8px 12px; font-size: 0.95em; }
+  .card { padding: 1em; }
 }
-th, td {
-  border: 1px solid #ddd;
-  padding: 10px;
-  text-align: center;
+
+@media (min-width: 601px) and (max-width: 900px) {
+  .col { min-width: 45%; }
 }
-th {
-  background-color: var(--primary-orange);
-  color: white;
+
+@media (min-width: 901px) {
+  .col { min-width: 30%; }
+}
+
+/* Utility layout helpers */
+.page-main {
+  max-width: 1000px;
+  margin: 2em auto;
+  padding: 0 1em;
+}
+.section-spacer { margin-bottom: 2em; }
+.mt-1 { margin-top: 1em; }
+.mb-1 { margin-bottom: 0.5em; }
+.flex-card { flex: 1 1 220px; min-width: 220px; }
+.mb-1 { margin-bottom: 1em; }
+.center { text-align: center; }
+
+/* visually hidden for accessibility (honeypot) */
+.visually-hidden {
+  position: absolute !important;
+  height: 1px; width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap;
 }

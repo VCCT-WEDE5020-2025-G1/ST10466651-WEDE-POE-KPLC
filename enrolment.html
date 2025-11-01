@@ -132,31 +132,33 @@
 </head>
 <body>
   <!-- Header with nav menu -->
-  <header class="card" style="text-align:center; margin-top:2em; background: linear-gradient(90deg, #ffb366 0%, #ff7300 100%); box-shadow:0 4px 24px rgba(255,115,0,0.10);">
-    <div class="header-inner">
-      <!-- Logo on the left -->
-      <div class="logo">
-        <img src="./images/kplclogo.png" alt="Kangaroo Play and Learn Centre Logo" />
-      </div>
+  <header class="site-header" role="banner" aria-label="Site header">
+  <div class="site-header-inner">
+    <!-- Logo on the left -->
+    <a href="home.html" class="logo">
+      <img src="./images/kplclogo.png" alt="Kangaroo Play and Learn Centre Logo">
+    </a>
 
-      <!-- Centered headings -->
-      <div class="header-titles">
-        <h1 style="font-size:4em; color:var(--white); margin-left: 2em;">Enrolment & Book a Visit</h1>
-    
-        <!-- Navigation buttons -->
-        <nav class="buttonposition">
-          <a href="home.html" class="button" style="margin:0 0.5em;">Home</a>
-          <a href="about.html" class="button" style="margin:0 0.5em;">About</a>
-          <a href="programme.html" class="button" style="margin:0 0.5em;">Programmes</a>
-          <a href="albums.html" class="button" style="margin:0 0.5em;">Gallery</a>
-          <a href="contacts.html" class="button" style="margin:0 0.5em;">Contact</a>
-        </nav>
-      </div>
+    <!-- Centered title + nav -->
+    <div class="header-center">
+      <h1 class="header-title">Enrolment</h1>
+      <nav class="nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="home.html" >Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="programme.html">Programmes</a></li>
+          <li><a href="albums.html">Gallery</a></li>
+          <li><a href="enrolment.html" class="active">Enrolment</a></li>
+          <li><a href="contacts.html">Contact</a></li>
+        </ul>
+      </nav>
     </div>
-  </header>
+  </div>
+</header>
+
 
   <!-- Main content -->
-  <main style="max-width:1000px; margin:2em auto;">
+  <main id="main" class="page-main">
     <section class="enrolment-container">
 
       <!-- Left info box -->
@@ -174,8 +176,8 @@
 
         <!-- Dynamic calendar -->
         <div class="calendar" id="calendar">
-          <h3 style="margin-bottom:0.5em;">Visit Availability</h3>
-          <div id="calendar-controls" style="margin-bottom:0.5em;">
+          <h3 class="mb-1">Visit Availability</h3>
+          <div id="calendar-controls" class="mb-1">
             <!-- Previous / next month navigation -->
             <button id="prev-month" class="button" style="padding:0.3em 1em; font-size:0.95em;">&#8592;</button>
             <span id="calendar-month" style="font-weight:700; margin:0 1em;"></span>
@@ -192,7 +194,7 @@
             </tbody>
           </table>
           <!-- Legend -->
-          <div style="margin-top:0.7em; font-size:0.97em;">
+          <div class="mt-1" style="font-size:0.97em;">
             <span style="background:var(--accent-green); color:var(--gray-dark); border-radius:5px; padding:0.2em 0.7em;">Available</span>
             <span style="background:var(--border-light); color:var(--gray-medium); border-radius:5px; padding:0.2em 0.7em; margin-left:1em;">Unavailable</span>
           </div>
@@ -204,15 +206,15 @@
         <h2>Book a Visit</h2>
 
         <!-- Parent info -->
-        <label for="parent-name">Parent's Name</label>
-        <input type="text" id="parent-name" name="parent-name" required placeholder="Enter your name">
+  <label for="parent-name">Parent's Name</label>
+  <input type="text" id="parent-name" name="parent-name" required aria-required="true" placeholder="Enter your name">
 
-        <label for="child-name">Child's Name</label>
-        <input type="text" id="child-name" name="child-name" required placeholder="Enter your child's name">
+  <label for="child-name">Child's Name</label>
+  <input type="text" id="child-name" name="child-name" required aria-required="true" placeholder="Enter your child's name">
 
         <!-- Dropdown for child’s age -->
-        <label for="child-age">Child's Age</label>
-        <select id="child-age" name="child-age" required>
+  <label for="child-age">Child's Age</label>
+  <select id="child-age" name="child-age" required aria-required="true">
           <option value="">Select age</option>
           <option value="2">2 years</option>
           <option value="3">3 years</option>
@@ -222,12 +224,12 @@
         </select>
 
         <!-- Date (linked to calendar) -->
-        <label for="visit-date">Preferred Visit Date</label>
-        <input type="text" id="visit-date" name="visit-date" required placeholder="Select a date from the calendar" readonly style="background:var(--gray-light); cursor:pointer;">
+  <label for="visit-date">Preferred Visit Date</label>
+  <input type="text" id="visit-date" name="visit-date" required aria-required="true" aria-describedby="calendar-month" placeholder="Select a date from the calendar" readonly class="visit-date-input">
 
         <!-- Time slot -->
-        <label for="visit-time">Preferred Time Slot</label>
-        <select id="visit-time" name="visit-time" required>
+  <label for="visit-time">Preferred Time Slot</label>
+  <select id="visit-time" name="visit-time" required aria-required="true">
           <option value="">Select a time slot</option>
           <option value="09:00-09:30">09:00 – 09:30</option>
           <option value="09:30-10:00">09:30 – 10:00</option>
@@ -242,8 +244,8 @@
         </select>
 
         <!-- Contact details -->
-        <label for="email">Your Email</label>
-        <input type="email" id="email" name="email" required placeholder="Enter your email">
+  <label for="email">Your Email</label>
+  <input type="email" id="email" name="email" required aria-required="true" placeholder="Enter your email">
 
         <!-- Optional message -->
         <label for="message">Additional Message (optional)</label>
@@ -257,150 +259,8 @@
   </main>
 
   <!-- Footer with contact + socials -->
-  <footer style="background: linear-gradient(90deg, #ffb366 0%, #ff7300 100%); color:var(--white); font-size:0.98em; margin:2em 0 0 0; padding:2em 0 1em 0;">
-      <div style="display:flex; flex-wrap:wrap; justify-content:center; align-items:flex-start; gap:2.5em; max-width:900px; margin:0 auto 1.2em auto;">
-        <!-- Contact Info -->
-        <div style="min-width:220px; text-align:left;">
-          <div style="font-weight:700; margin-bottom:0.5em;">Contact</div>
-          <div style="margin-bottom:0.4em;">
-            <span style="font-weight:600;">Address:</span><br>
-            98 Gie Road Parklands
-          </div>
-          <div style="margin-bottom:0.4em;">
-            <span style="font-weight:600;">Phone:</span><br>
-            <a href="tel:0215568002" style="color:var(--white); text-decoration:underline;">(021) 556-8002</a>
-          </div>
-          <div>
-            <span style="font-weight:600;">Email:</span><br>
-            <a href="mailto:kangaroolearningcentre2@gmail.com" style="color:var(--white); text-decoration:underline;">kangaroolearningcentre2@gmail.com</a>
-          </div>
-        </div>
-
-        <!-- Social Media -->
-        <div style="min-width:220px; text-align:left;">
-          <div style="font-weight:700; margin-bottom:0.5em;">Connect with us</div>
-          <div style="display:flex; gap:1em; align-items:center; margin-bottom:0.7em;">
-            <!-- Icons -->
-            <a href="https://www.instagram.com/" target="_blank" rel="noopener" title="Instagram">
-              <img src="./images/instalogo.jpg" alt="Instagram" style="height:2.2em; width:2.2em; border-radius:50%; object-fit:cover;">
-            </a>
-            <a href="https://www.facebook.com/" target="_blank" rel="noopener" title="Facebook">
-              <img src="./images/facebooklogo.png" alt="Facebook" style="height:2.2em; width:2.2em; border-radius:50%; object-fit:cover;">
-            </a>
-            <a href="https://www.tiktok.com/" target="_blank" rel="noopener" title="TikTok">
-              <img src="./images/tiktoklogo.jpg" alt="TikTok" style="height:2.2em; width:2.2em; border-radius:50%; object-fit:cover;">
-            </a>
-          </div>
-        </div>
-      </div>
-      <div style="border-top:1px solid rgba(255,255,255,0.18); margin:1.2em auto 0 auto; max-width:900px; padding-top:1em; text-align:center;">
-        &copy; 2025 Kangaroo Play and Learn Centre. All rights reserved.
-      </div>
-  </footer>
-
-  <!-- JavaScript: Calendar + Form logic -->
-  <script>
-    // Calendar setup
-    const calendarBody = document.getElementById('calendar-body');
-    const calendarMonth = document.getElementById('calendar-month');
-    const visitDateInput = document.getElementById('visit-date');
-    let selectedDate = null;
-    let currentMonth = new Date().getMonth();
-    let currentYear = new Date().getFullYear();
-
-    // Render calendar with availability
-    function renderCalendar(month, year) {
-      calendarBody.innerHTML = '';
-      const firstDay = new Date(year, month, 1).getDay();
-      const daysInMonth = new Date(year, month + 1, 0).getDate();
-      const today = new Date();
-
-      calendarMonth.textContent = `${new Date(year, month).toLocaleString('default', { month: 'long' })} ${year}`;
-
-      let date = 1;
-      for (let i = 0; i < 6; i++) {
-        let row = document.createElement('tr');
-        for (let j = 0; j < 7; j++) {
-          let cell = document.createElement('td');
-          if (i === 0 && j < firstDay) {
-            // Empty cells before month starts
-            cell.innerHTML = '';
-          } else if (date > daysInMonth) {
-            // Stop if beyond month
-            cell.innerHTML = '';
-          } else {
-            let cellDate = new Date(year, month, date);
-
-            // Only weekdays & future dates are selectable
-            if (cellDate >= today && cellDate.getDay() !== 0 && cellDate.getDay() !== 6) {
-              cell.className = 'available';
-              cell.textContent = date;
-              cell.tabIndex = 0;
-              cell.addEventListener('click', function() {
-                // Highlight selected day
-                document.querySelectorAll('.calendar td').forEach(td => td.classList.remove('selected'));
-                cell.classList.add('selected');
-                selectedDate = cellDate;
-                visitDateInput.value = cellDate.toLocaleDateString();
-              });
-            } else {
-              // Weekends + past days = unavailable
-              cell.className = 'unavailable';
-              cell.textContent = date;
-            }
-            date++;
-          }
-          row.appendChild(cell);
-        }
-        calendarBody.appendChild(row);
-        if (date > daysInMonth) break;
-      }
-    }
-
-    // Prev/Next month buttons
-    document.getElementById('prev-month').addEventListener('click', function() {
-      if (currentMonth > new Date().getMonth() || currentYear > new Date().getFullYear()) {
-        currentMonth--;
-        if (currentMonth < 0) {
-          currentMonth = 11;
-          currentYear--;
-        }
-        renderCalendar(currentMonth, currentYear);
-      }
-    });
-    document.getElementById('next-month').addEventListener('click', function() {
-      if (currentMonth < new Date().getMonth() + 1 || currentYear < new Date().getFullYear()) {
-        currentMonth++;
-        if (currentMonth > 11) {
-          currentMonth = 0;
-          currentYear++;
-        }
-        renderCalendar(currentMonth, currentYear);
-      }
-    });
-
-    // Scroll to calendar when date input is focused
-   
-
-
-    visitDateInput.addEventListener('focus', function() {
-      document.getElementById('calendar').scrollIntoView({ behavior: 'smooth', block: 'center' });
-    });
-
-    renderCalendar(currentMonth, currentYear);
-
-    // Simple form feedback (no backend)
-    document.getElementById('enrolment-form').addEventListener('submit', function(e) {
-      e.preventDefault();
-      if (!visitDateInput.value) {
-        document.getElementById('form-status').textContent = "Please select a visit date from the calendar.";
-        return;
-      }
-      document.getElementById('form-status').textContent = "Thank you for booking your visit! We'll contact you soon to confirm.";
-      this.reset();
-      selectedDate = null;
-      document.querySelectorAll('.calendar td').forEach(td => td.classList.remove('selected'));
-    });
-  </script>
+  <div id="footer"></div>
+      <script src="include.js"></script>
+      <script src="form.js"></script>
 </body>
 </html>

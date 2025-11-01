@@ -36,34 +36,35 @@
 </head>
 <body>
   <!-- Header Section with Navigation -->
-  <header class="card" style="text-align:center; margin-top:2em; background: linear-gradient(90deg, #ffb366 0%, #ff7300 100%); box-shadow:0 4px 24px rgba(255,115,0,0.10);">
-     <div class="header-inner">
-      <!-- Logo on the left -->
-      <div class="logo">
-        <img src="./images/kplclogo.png" alt="Kangaroo Play and Learn Centre Logo" />
-      </div>
+  <header class="site-header" role="banner" aria-label="Site header">
+  <div class="site-header-inner">
+    <!-- Logo on the left -->
+    <a href="home.html" class="logo">
+      <img src="./images/kplclogo.png" alt="Kangaroo Play and Learn Centre Logo">
+    </a>
 
-      <!-- Centered headings -->
-      <div class="header-titles">
-        <h1 style="font-size:5em; color:var(--white); margin-left: 2em;">About Us</h1>
-
-  
-          <!-- Navigation Buttons -->
-        <nav class="buttonposition">
-          <a href="home.html" class="button">Home</a>
-          <a href="programme.html" class="button">Programmes</a>
-          <a href="albums.html" class="button">Gallery</a>
-          <a href="enrolment.html" class="button">Enrolment</a>
-          <a href="contacts.html" class="button">Contact</a>
-        </nav>
-      </div>
+    <!-- Centered title + nav -->
+    <div class="header-center">
+      <h1 class="header-title">About Us</h1>
+      <nav class="nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="home.html" >Home</a></li>
+          <li><a href="about.html" class="active">About</a></li>
+          <li><a href="programme.html">Programmes</a></li>
+          <li><a href="albums.html">Gallery</a></li>
+          <li><a href="enrolment.html">Enrolment</a></li>
+          <li><a href="contacts.html">Contact</a></li>
+        </ul>
+      </nav>
     </div>
-  </header>
+  </div>
+</header>
+
 
   <!-- Main Content -->
-  <main style="max-width:800px; margin:2em auto;">
+  <main id="main" class="page-main">
     <!-- Our Story Section -->
-    <section class="card" style="margin-bottom:2em;">
+  <section class="card section-spacer">
       <h2>Our Story</h2>
       <p>
         Kangaroo Play and Learn Centre was founded with a vision to create a joyful, safe, and inspiring environment for young children to begin their educational journey. Since opening our doors, we have welcomed families from all backgrounds and provided a nurturing space where every child is valued and encouraged to thrive.
@@ -74,7 +75,7 @@
     </section>
 
     <!-- Philosophy Section -->
-    <section class="card" style="margin-bottom:2em;">
+  <section class="card section-spacer">
       <h2>Our Philosophy</h2>
       <p>
         We believe that children learn best through play, exploration, and positive relationships. Our curriculum is designed to foster curiosity, creativity, and confidence, while supporting each child’s unique interests and abilities.
@@ -88,7 +89,7 @@
     </section>
 
     <!-- Meet the Team Section -->
-    <section class="card" style="margin-bottom:2em;">
+  <section class="card section-spacer">
       <h2>Meet Our Team</h2>
       <p>
         Our team consists of passionate, qualified educators who are dedicated to early childhood development. All staff are certified in early childhood education and first aid, and participate in ongoing professional development to ensure the highest standards of care and teaching.
@@ -102,7 +103,7 @@
     </section>
 
     <!-- Why Choose Us Section -->
-    <section class="card" style="margin-bottom:2em;">
+  <section class="card section-spacer">
       <h2>Why Choose Us?</h2>
       <ul>
         <li>Safe, modern facilities and outdoor play areas</li>
@@ -119,47 +120,8 @@
   </main>
 
   <!-- Footer Section -->
-  <footer style="background: linear-gradient(90deg, #ffb366 0%, #ff7300 100%); color:var(--white); font-size:0.98em; margin:2em 0 0 0; padding:2em 0 1em 0;">
-    <div style="display:flex; flex-wrap:wrap; justify-content:center; align-items:flex-start; gap:2.5em; max-width:900px; margin:0 auto 1.2em auto;">
-      
-      <!-- Contact Info -->
-      <div style="min-width:220px; text-align:left;">
-        <div style="font-weight:700; margin-bottom:0.5em;">Contact</div>
-        <div style="margin-bottom:0.4em;">
-          <span style="font-weight:600;">Address:</span><br>
-          98 Gie Road Parklands
-        </div>
-        <div style="margin-bottom:0.4em;">
-          <span style="font-weight:600;">Phone:</span><br>
-          <a href="tel:0215568002" style="color:var(--white); text-decoration:underline;">(021) 556-8002</a>
-        </div>
-        <div>
-          <span style="font-weight:600;">Email:</span><br>
-          <a href="mailto:kangaroolearningcentre2@gmail.com" style="color:var(--white); text-decoration:underline;">kangaroolearningcentre2@gmail.com</a>
-        </div>
-      </div>
-      
-      <!-- Social Media Links -->
-      <div style="min-width:220px; text-align:left;">
-        <div style="font-weight:700; margin-bottom:0.5em;">Connect with us</div>
-        <div style="display:flex; gap:1em; align-items:center; margin-bottom:0.7em;">
-          <a href="https://www.instagram.com/" target="_blank" rel="noopener" title="Instagram">
-            <img src="./images/instalogo.jpg" alt="Instagram" style="height:2.2em; width:2.2em; border-radius:50%; object-fit:cover; box-shadow:0 2px 8px rgba(0,0,0,0.13); background:#fff; transition:transform 0.2s;">
-          </a>
-          <a href="https://www.facebook.com/" target="_blank" rel="noopener" title="Facebook">
-            <img src="./images/facebooklogo.png" alt="Facebook" style="height:2.2em; width:2.2em; border-radius:50%; object-fit:cover; box-shadow:0 2px 8px rgba(0,0,0,0.13); background:#fff; transition:transform 0.2s;">
-          </a>
-          <a href="https://www.tiktok.com/" target="_blank" rel="noopener" title="TikTok">
-            <img src="./images/tiktoklogo.jpg" alt="TikTok" style="height:2.2em; width:2.2em; border-radius:50%; object-fit:cover; box-shadow:0 2px 8px rgba(0,0,0,0.13); background:#fff; transition:transform 0.2s;">
-          </a>
-        </div>
-      </div>
-    </div>
+  <div id="footer"></div>
+      <script src="include.js"></script>
 
-    <!-- Copyright -->
-    <div style="border-top:1px solid rgba(255,255,255,0.18); margin:1.2em auto 0 auto; max-width:900px; padding-top:1em; text-align:center;">
-      &copy; 2025 Kangaroo Play and Learn Centre. All rights reserved.
-    </div>
-  </footer>
 </body>
 </html>
