@@ -1,8 +1,10 @@
 // ===========================
-// Header Search Injection & Smart Dropdown
+// 🔍 Smart Header Search (Bottom-Right Header Version)
 // ===========================
+// Author: Moses Ezeh ✨
+
 document.addEventListener('DOMContentLoaded', () => {
-  const pages = [
+  const PAGES = [
     { name: 'Home', url: 'home.html' },
     { name: 'About', url: 'about.html' },
     { name: 'Programmes', url: 'programme.html' },
@@ -11,134 +13,157 @@ document.addEventListener('DOMContentLoaded', () => {
     { name: 'Contact', url: 'contacts.html' },
   ];
 
-  // Inject search form into header
   const header = document.querySelector('.site-header-inner');
   if (!header) return;
 
-  const searchForm = document.createElement('form');
-  searchForm.id = 'header-search';
-  searchForm.setAttribute('role', 'search');
-  searchForm.style.position = 'relative';
-  searchForm.style.marginTop = '0.5em';
+  // 🔧 Create search form
+  const form = document.createElement('form');
+  form.id = 'header-search';
+  form.className = 'header-search';
+  form.setAttribute('role', 'search');
+  form.setAttribute('aria-label', 'Site Search');
+  form.innerHTML = `
+    <input type="search" id="search-input" placeholder="Search..." aria-label="Search site" autocomplete="off"/>
+  `;
+  header.appendChild(form);
 
-  const searchInput = document.createElement('input');
-  searchInput.type = 'search';
-  searchInput.id = 'search-input';
-  searchInput.placeholder = 'Search...';
-  searchInput.autocomplete = 'off';
-  searchInput.setAttribute('aria-label', 'Search site');
-  Object.assign(searchInput.style, {
-    padding: '6px 12px',
-    borderRadius: '20px',
-    border: '1px solid rgba(0,0,0,0.2)',
-    width: '200px',
-    fontSize: '0.95rem'
-  });
+  const input = form.querySelector('#search-input');
 
-  searchForm.appendChild(searchInput);
-  header.appendChild(searchForm);
+  // 🎨 Styles
+  const style = document.createElement('style');
+  style.textContent = `
+    .site-header-inner { position: relative; }
+    .header-search {
+      position: absolute;
+      bottom: -32px;
+      right: 0px;
+      display: flex;
+      align-items: center;
+      gap: 0.5em;
+      padding: 0.5em 1em;
+      z-index: 999;
+      color: #000;
+    }
+    .header-search input {
+      border-radius: 30px;
+      border: 1.5px solid rgba(0,0,0,0.25);
+      padding: 0.5em 1em;
+      width: 250px;
+      outline: none;
+      transition: all 0.25s ease;
+    }
+    .header-search input:focus {
+      border-color: var(--primary-orange);
+      box-shadow: 0 0 0 3px rgba(255,106,0,0.25);
+    }
+    .search-dropdown {
+      position: absolute;
+      top: calc(100% + 6px);
+      left: 0;
+      right: 0;
+      border-radius: 10px;
+      background: #fff;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.18);
+      opacity: 0;
+      transform: translateY(-6px);
+      transition: all 0.25s ease;
+      z-index: 1000;
+    }
+    .search-dropdown.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .search-option {
+      padding: 10px 14px;
+      cursor: pointer;
+    }
+    .search-option:hover,
+    .search-option.active {
+      background: #f2f2f2;
+    }
+  `;
+  document.head.appendChild(style);
 
-  // Function to remove any existing dropdown
-  function removeDropdown() {
-    const oldDropdown = document.querySelector('.search-dropdown');
-    if (oldDropdown) oldDropdown.remove();
-  }
+  // 🧠 Dropdown & keyboard logic
+  let activeIndex = -1;
 
-  // small debounce helper
-  function debounce(fn, wait = 200) {
-    let t;
-    return function (...args) {
-      clearTimeout(t);
-      t = setTimeout(() => fn.apply(this, args), wait);
+  const removeDropdown = () => {
+    document.querySelector('.search-dropdown')?.remove();
+    activeIndex = -1;
+  };
+
+  const createDropdown = (matches) => {
+    removeDropdown();
+    const dropdown = document.createElement('div');
+    dropdown.className = 'search-dropdown';
+
+    matches.forEach((page, i) => {
+      const option = document.createElement('div');
+      option.className = 'search-option';
+      option.textContent = page.name;
+      option.dataset.url = page.url;
+
+      option.addEventListener('mouseenter', () => {
+        input.value = page.name;
+        highlightOption(i);
+      });
+      option.addEventListener('click', () => window.location.href = page.url);
+
+      dropdown.appendChild(option);
+    });
+
+    form.appendChild(dropdown);
+    requestAnimationFrame(() => dropdown.classList.add('show'));
+  };
+
+  const highlightOption = (index) => {
+    const options = document.querySelectorAll('.search-option');
+    options.forEach((opt, i) => opt.classList.toggle('active', i === index));
+    activeIndex = index;
+  };
+
+  const debounce = (fn, delay = 150) => {
+    let timer;
+    return (...args) => {
+      clearTimeout(timer);
+      timer = setTimeout(() => fn(...args), delay);
     };
-  }
+  };
 
-  // Show suggestions / handle submit
-  function handleSearch(query) {
-    removeDropdown();
-    if (!query) return;
+  const handleSearch = (query) => {
+    if (!query) return removeDropdown();
+    const matches = PAGES.filter(p => p.name.toLowerCase().includes(query));
+    matches.length ? createDropdown(matches) : removeDropdown();
+  };
 
-    const matches = pages.filter(page => page.name.toLowerCase().includes(query));
+  input.addEventListener('input', debounce(() => handleSearch(input.value.trim().toLowerCase())));
 
-    if (matches.length === 1) {
-      // Single match: direct redirect
-      window.location.href = matches[0].url;
-    } else if (matches.length > 1) {
-      // Multiple matches: show dropdown with ARIA roles
-      const dropdown = document.createElement('div');
-      dropdown.className = 'search-dropdown';
-      dropdown.setAttribute('role', 'listbox');
-      dropdown.setAttribute('aria-label', 'Search suggestions');
-      Object.assign(dropdown.style, {
-        position: 'absolute',
-        background: '#fff',
-        color: '#000',
-        padding: '0.25em',
-        borderRadius: '6px',
-        boxShadow: '0 4px 12px rgba(0,0,0,0.15)',
-        top: (searchInput.offsetHeight + 6) + 'px',
-        left: '0',
-        zIndex: '9999',
-        minWidth: '200px'
-      });
+  input.addEventListener('keydown', (e) => {
+    const options = [...document.querySelectorAll('.search-option')];
+    if (!options.length) return;
 
-      matches.forEach((page, idx) => {
-        const option = document.createElement('div');
-        option.textContent = page.name;
-        option.setAttribute('role', 'option');
-        option.tabIndex = 0;
-        Object.assign(option.style, {
-          padding: '8px 10px',
-          cursor: 'pointer'
-        });
-        option.addEventListener('click', () => window.location.href = page.url);
-        option.addEventListener('keydown', (ev) => {
-          if (ev.key === 'Enter' || ev.key === ' ') {
-            ev.preventDefault();
-            window.location.href = page.url;
-          }
-        });
-        option.addEventListener('mouseenter', () => option.style.background = '#f0f0f0');
-        option.addEventListener('mouseleave', () => option.style.background = '#fff');
-        dropdown.appendChild(option);
-      });
-
-      searchForm.appendChild(dropdown);
-    } else {
-      // No match feedback (non-blocking)
-      // optionally show inline message instead of alert
-      // alert(`No results found for: "${query}"`);
-    }
-  }
-
-  // Handle input event: live suggestions (debounced)
-  searchInput.addEventListener('input', debounce(() => {
-    const query = searchInput.value.trim().toLowerCase();
-    removeDropdown();
-    if (!query) return;
-    handleSearch(query);
-  }, 180));
-
-  // Handle form submission
-  searchForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const query = searchInput.value.trim().toLowerCase();
-    handleSearch(query);
-  });
-
-  // Hide dropdown if clicked outside
-  document.addEventListener('click', (e) => {
-    if (!searchForm.contains(e.target)) removeDropdown();
-  });
-
-  // keyboard handling: Enter when one suggestion
-  searchInput.addEventListener('keydown', (e) => {
-    const items = searchForm.querySelectorAll('.search-dropdown [role="option"]');
-    if (e.key === 'Enter' && items.length === 1) {
-      window.location.href = pages.find(p => p.name === items[0].textContent).url;
+    if (e.key === 'ArrowDown') {
       e.preventDefault();
-    }
-    // Escape to collapse
-    if (e.key === 'Escape') removeDropdown();
+      activeIndex = (activeIndex + 1) % options.length;
+      highlightOption(activeIndex);
+      input.value = options[activeIndex].textContent;
+    } else if (e.key === 'ArrowUp') {
+      e.preventDefault();
+      activeIndex = (activeIndex - 1 + options.length) % options.length;
+      highlightOption(activeIndex);
+      input.value = options[activeIndex].textContent;
+    } else if (e.key === 'Enter' && activeIndex >= 0) {
+      e.preventDefault();
+      window.location.href = options[activeIndex].dataset.url;
+    } else if (e.key === 'Escape') removeDropdown();
   });
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const query = input.value.trim().toLowerCase();
+    const match = PAGES.find(p => p.name.toLowerCase() === query);
+    match ? window.location.href = match.url : handleSearch(query);
+  });
+
+  document.addEventListener('click', e => { if (!form.contains(e.target)) removeDropdown(); });
 });

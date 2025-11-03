@@ -1,39 +1,46 @@
-/* Base colors */
+/* =========================================================
+   BASE STYLES
+========================================================= */
+
+/* Colors */
 :root {
   --primary-orange: #ee8645bb;
   --orange-dark: #f09b66e1;
-  --orange-light: #F09B66;
+  --orange-light: #f09b66;
   --white: #ffffff;
   --gray-light: #fff6f9;
-  --gray-dark: #222831;
   --gray-medium: #fac2c2;
+  --gray-dark: #222831;
   --accent-yellow: #ffd600;
-  --border-light: #ffb9cf5b;
   --accent-green: #abf760;
   --accent-blue: #6ed3f0;
   --light-pink: #e4125428;
+  --border-light: #ffb9cf5b;
 }
 
-/* Import a clean modern UI font for a professional look */
+/* Font Import */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap');
 
-/* Body and backgrounds */
+/* Global Reset & Body */
 body {
+  margin: 0;
+  padding: 0;
   font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.65;
+  background: #fff2e1;
+  color: var(--gray-dark);
+  text-align: left;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
-  text-align: left;
-  background: #f4f4f9;
-  color: var(--gray-dark);
-  font-size: 16px;
-  line-height: 1.65;
-  margin: 0;
-  padding: 0;
   min-height: 100vh;
 }
 
-/* Headers */
+/* =========================================================
+   TYPOGRAPHY
+========================================================= */
+
 h1, h2, h3, h4, h5, h6 {
   color: var(--primary-orange);
   font-weight: 700;
@@ -49,65 +56,38 @@ h1 {
   letter-spacing: 1px;
 }
 
-.buttons {
+h2 { font-size: 1.7em; }
+h3 { font-size: 1.2em; }
+
+.title {
+  font-size: 2em;
+  font-weight: bold;
   margin-bottom: 20px;
-}
-
-h2 {
-  font-size: 1.7em;
-}
-
-h3 {
-  font-size: 1.2em;
-}
-
-/* Buttons */
-/* Buttons - merged and polished */
-/* Unified site button styles (use class="button") */
-.button, .btn, button, input[type="submit"] {
-  background: var(--primary-orange);
-  color: var(--white);
-  border: none;
-  border-radius: 24px;
-  padding: 0.6em 1.2em;
-  font-weight: 600;
-  font-size: 1rem;
-  cursor: pointer;
-  text-decoration: none;
-  transition: background 0.2s, box-shadow 0.2s, transform 0.12s;
-  box-shadow: 0 2px 8px rgba(255, 115, 0, 0.10);
-  margin: 0.25em;
-  display: inline-block;
-}
-.button:hover, .btn:hover, button:hover, input[type="submit"]:hover {
-  background: var(--accent-yellow);
-  color: var(--primary-orange);
-  transform: scale(1.03);
-  box-shadow: 0 4px 16px rgba(255, 115, 0, 0.18);
-  border: 2px solid var(--primary-orange);
-}
-.button:active, .btn:active, button:active, input[type="submit"]:active {
-  background: var(--light-pink);
-  color: var(--primary-orange);
-  border: 2px solid var(--primary-orange);
-}
-/* Table styles */
-table {
-  margin: 1.2em auto;
-  border-collapse: collapse;
+  text-align: center;
   width: 100%;
-  max-width: 900px;
 }
-th, td {
-  border: 1px solid #eee;
-  padding: 10px;
-  text-align: left;
+
+/* =========================================================
+   LINKS
+========================================================= */
+
+a {
+  color: var(--primary-orange);
+  text-decoration: none;
+  transition: color 0.2s;
+  font-weight: 500;
 }
-th {
-  background-color: var(--primary-orange);
-  color: white;
+
+a:hover,
+a:focus {
+  color: var(--orange-dark);
+  text-decoration: underline;
 }
-/* Buttons - unified padding and polish */
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
 .button, .btn, button, input[type="submit"] {
   background: var(--orange-light);
   color: var(--white);
@@ -120,86 +100,78 @@ th {
   text-decoration: none;
   transition: background 0.2s, box-shadow 0.2s, transform 0.15s;
   box-shadow: 0 2px 8px rgba(255, 115, 0, 0.10);
-  margin: 0.2em 0.2em;
+  margin: 0.25em;
   display: inline-block;
 }
-.button:hover, .btn:hover, button:hover, input[type="submit"]:hover {
+
+.button:hover,
+.btn:hover,
+button:hover,
+input[type="submit"]:hover {
   background: var(--accent-yellow);
   color: var(--primary-orange);
   transform: scale(1.07);
   box-shadow: 0 4px 16px rgba(255, 115, 0, 0.18);
   border: 2px solid var(--primary-orange);
 }
-.button:active, .btn:active, button:active, input[type="submit"]:active {
+
+.button:active,
+.btn:active,
+button:active,
+input[type="submit"]:active {
   background: var(--light-pink);
   color: var(--primary-orange);
   border: 2px solid var(--primary-orange);
 }
 
-/* Links */
-a {
-  color: var(--primary-orange);
-  text-decoration: none;
-  transition: color 0.2s;
-  font-weight: 500;
-}
-a:hover, a:focus {
-  color: var(--orange-dark);
-  text-decoration: underline;
+/* =========================================================
+   TABLES
+========================================================= */
+
+table {
+  margin: 1.2em auto;
+  border-collapse: collapse;
+  width: 100%;
+  max-width: 900px;
 }
 
-/* Cards or interactive panels */
-.card {
-  background: var(--white);
-  border-radius: 14px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
-  padding: 1.4em;
-  margin: 1.2em 0;
-  border: 1px solid var(--border-light);
-  transition: box-shadow 0.18s, transform 0.12s;
-  position: relative;
+th, td {
+  border: 1px solid #eee;
+  padding: 10px;
+  text-align: left;
 }
-.card:hover {
-  box-shadow: 0 8px 28px rgba(255, 115, 0, 0.12);
-  transform: translateY(-3px);
+
+th {
+  background-color: var(--primary-orange);
+  color: var(--white);
 }
-/* Card polish */
+
+/* =========================================================
+   CARDS
+========================================================= */
+
 .card {
   background: var(--white);
   border-radius: 18px;
   box-shadow: 0 2px 16px rgba(255, 115, 0, 0.07);
-  padding: 2.2em 2em 2em 2em;
+  padding: 2em;
   margin: 1.5em 0;
   border: 2px solid var(--border-light);
   transition: box-shadow 0.2s, border-left 0.2s, transform 0.18s;
   position: relative;
 }
+
 .card:hover {
   box-shadow: 0 8px 32px rgba(255, 115, 0, 0.15);
   border-left: 8px solid var(--primary-orange);
   transform: translateY(-2px) scale(1.01);
 }
 
-/* Accent elements */
-.badge, .highlight {
-  background: var(--light-pink);
-  color: var(--primary-orange);
-  border-radius: 14px;
-  padding: 0.3em 1em;
-  font-weight: 600;
-  font-size: 1em;
-  letter-spacing: 0.2px;
-  display: inline-block;
-}
-.badge-green {
-  background: var(--accent-green);
-  color: var(--gray-dark);
-}
-.badge-blue {
-  background: var(--accent-blue);
-  color: var(--gray-dark);
-}
-.highlight-pink {
+/* =========================================================
+   BADGES & HIGHLIGHTS
+========================================================= */
+
+.badge, .highlight, .highlight-pink {
   background: var(--light-pink);
   color: var(--primary-orange);
   border-radius: 14px;
@@ -210,7 +182,20 @@ a:hover, a:focus {
   display: inline-block;
 }
 
-/* Inputs */
+.badge-green {
+  background: var(--accent-green);
+  color: var(--gray-dark);
+}
+
+.badge-blue {
+  background: var(--accent-blue);
+  color: var(--gray-dark);
+}
+
+/* =========================================================
+   FORM ELEMENTS
+========================================================= */
+
 input, textarea, select {
   border: 2px solid var(--light-pink);
   border-radius: 5px;
@@ -221,41 +206,17 @@ input, textarea, select {
   color: var(--gray-dark);
   margin-bottom: 1em;
 }
+
 input:focus, textarea:focus, select:focus {
   border-color: var(--primary-orange);
   outline: none;
   box-shadow: 0 0 0 2px rgba(255, 115, 0, 0.08);
 }
 
-/* Utility classes */
-.bg-orange {
-  background: var(--primary-orange);
-  color: var(--white);
-}
-.text-orange {
-  color: var(--primary-orange);
-}
-.bg-white {
-  background: var(--white);
-  color: var(--gray-dark);
-}
-.bg-pink {
-  background: var(--light-pink);
-  color: var(--gray-dark);
-}
+/* =========================================================
+   NAVIGATION
+========================================================= */
 
-/* Professional touch: spacing and layout */
-main {
-  padding: 1em;
-  max-width: 1100px;
-  margin: 0 auto;
-}
-ul {
-  padding-left: 1.5em;
-  margin-bottom: 0.5em;
-}
-
-/* Navigation bar refinement */
 nav {
   margin-top: 1.5em;
   display: flex;
@@ -264,93 +225,6 @@ nav {
   flex-wrap: wrap;
 }
 
-/* Programme details for clickable age groups */
-.programme-link {
-  cursor: pointer;
-  text-decoration: underline;
-  color: var(--primary-orange);
-  background: none;
-  border: none;
-  font-size: 1.1em;
-  font-weight: 700;
-  margin-bottom: 0.7em;
-  display: block;
-  width: 100%;
-  text-align: left;
-  padding: 0;
-}
-.programme-link:focus {
-  outline: 2px solid var(--accent-yellow);
-}
-.programme-details {
-  display: none;
-  margin-top: 1em;
-}
-.programme-details.active {
-  display: block;
-}
-
-
-/* Button styles for mobile */
-button, .button, .btn, input[type="submit"] {
-  padding: 10px 20px;
-  font-size: 1em;
-  border-radius: 4px;
-  width: auto;
-  border: none;
-}
-@media (max-width: 600px) {
-  button, .button, .btn, input[type="submit"] {
-    width: 100%;
-    font-size: 1em;
-    border: 2px solid black;
-  }
-  .row {
-    flex-direction: column;
-  }
-  nav {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-}
-
-/* Tablets (601px to 900px) */
-@media (min-width: 601px) and (max-width: 900px) {
-  h1 {
-    font-size: 1.75rem;
-  }
-  .col {
-    min-width: 45%;
-  }
-}
-
-/* Large screens (901px+) */
-@media (min-width: 901px) {
-  .col {
-    min-width: 30%;
-  }
-}
-
-body {
-  font-family: Arial, sans-serif;
-  text-align: center;
-  background: #f5f5f5;
-}
-
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background-color: #f2f2f2;
-}
-.title {
-  font-size: 2em;
-  font-weight: bold;
-  margin: 0 0 20px 0;
-  text-align: center;
-  width: 100%;
-}
-
-/* Style the nav buttons */
 .nav li {
   background-color: rgba(255, 255, 255, 0.2);
   border-radius: 25px;
@@ -366,54 +240,107 @@ body {
   border-radius: 22px;
 }
 
-/* On hover */
-.nav a:hover {
-  background-color: var(--accent-yellow);
-  color: var(--primary-orange);
-  border: 2px solid black;
-}
-
-/* Active (current page) styling */
+.nav a:hover,
 .nav a.active {
   background-color: var(--accent-yellow);
   color: var(--primary-orange);
   border: 2px solid black;
 }
-/* utility tweaks for small screens */
+
+/* =========================================================
+   PROGRAMME DETAILS
+========================================================= */
+
+.programme-link {
+  cursor: pointer;
+  text-decoration: underline;
+  color: var(--primary-orange);
+  background: none;
+  border: none;
+  font-size: 1.1em;
+  font-weight: 700;
+  margin-bottom: 0.7em;
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 0;
+}
+
+.programme-link:focus {
+  outline: 2px solid var(--accent-yellow);
+}
+
+.programme-details {
+  display: none;
+  margin-top: 1em;
+}
+
+.programme-details.active {
+  display: block;
+}
+
+/* =========================================================
+   UTILITIES
+========================================================= */
+
+main {
+  padding: 1em;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+ul { padding-left: 1.5em; margin-bottom: 0.5em; }
+
+.bg-orange { background: var(--primary-orange); color: var(--white); }
+.bg-white { background: var(--white); color: var(--gray-dark); }
+.bg-pink { background: var(--light-pink); color: var(--gray-dark); }
+.text-orange { color: var(--primary-orange); }
+
+.page-main { max-width: 1000px; margin: 2em auto; padding: 0 1em; }
+.section-spacer { margin-bottom: 2em; }
+.mt-1 { margin-top: 1em; }
+.mb-1 { margin-bottom: 1em; }
+.center { text-align: center; }
+.flex-card { flex: 1 1 220px; min-width: 220px; }
+
+.visually-hidden {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap;
+}
+
+/* =========================================================
+   RESPONSIVE DESIGN
+========================================================= */
+
+/* Mobile */
 @media (max-width: 600px) {
   main { padding: 0.6em; }
   h1 { font-size: 1.5em; }
   .logo img { height: 82px; }
   .nav a { padding: 8px 12px; font-size: 0.95em; }
   .card { padding: 1em; }
+  button, .button, .btn, input[type="submit"] {
+    width: 100%;
+    font-size: 1em;
+    border: 2px solid black;
+  }
+  .row, nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
 
+/* Tablets */
 @media (min-width: 601px) and (max-width: 900px) {
+  h1 { font-size: 1.75rem; }
   .col { min-width: 45%; }
 }
 
+/* Large Screens */
 @media (min-width: 901px) {
   .col { min-width: 30%; }
-}
-
-/* Utility layout helpers */
-.page-main {
-  max-width: 1000px;
-  margin: 2em auto;
-  padding: 0 1em;
-}
-.section-spacer { margin-bottom: 2em; }
-.mt-1 { margin-top: 1em; }
-.mb-1 { margin-bottom: 0.5em; }
-.flex-card { flex: 1 1 220px; min-width: 220px; }
-.mb-1 { margin-bottom: 1em; }
-.center { text-align: center; }
-
-/* visually hidden for accessibility (honeypot) */
-.visually-hidden {
-  position: absolute !important;
-  height: 1px; width: 1px;
-  overflow: hidden;
-  clip: rect(1px, 1px, 1px, 1px);
-  white-space: nowrap;
 }
